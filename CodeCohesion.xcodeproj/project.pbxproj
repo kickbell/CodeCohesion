@@ -39,6 +39,10 @@
 		81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A828768A8600B21D8A /* CalcViewModel.swift */; };
 		A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */; };
 		A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */; };
+		A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */; };
+		A8BB396E287728F9007BAEA4 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396D287728F9007BAEA4 /* Protocols.swift */; };
+		A8BB397028772A77007BAEA4 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396F28772A77007BAEA4 /* Wireframe.swift */; };
+		A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,10 @@
 		81E3E0A828768A8600B21D8A /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
 		A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSignUp.storyboard; sourceTree = "<group>"; };
 		A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewController.swift; sourceTree = "<group>"; };
+		A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewModel.swift; sourceTree = "<group>"; };
+		A8BB396D287728F9007BAEA4 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		A8BB396F28772A77007BAEA4 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		BCE3525A4EEFAAE3B5138353 /* Pods-CodeCohesion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.release.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.release.xcconfig"; sourceTree = "<group>"; };
 		C17A585DF3A30DE4D7641166 /* Pods-CodeCohesion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.debug.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +268,10 @@
 			children = (
 				A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */,
 				A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */,
+				A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */,
+				A8BB396D287728F9007BAEA4 /* Protocols.swift */,
+				A8BB396F28772A77007BAEA4 /* Wireframe.swift */,
+				A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */,
 			);
 			path = GitHubSignUp;
 			sourceTree = "<group>";
@@ -387,7 +399,10 @@
 				81574E1F2876B98F000A5A41 /* GeolocationService.swift in Sources */,
 				817DC63E28757DEE00E6BE38 /* RxPickerViewController.swift in Sources */,
 				8176E50428753631005CE4CC /* BaseViewController.swift in Sources */,
+				A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */,
 				8176E50F28754E6E005CE4CC /* KeyboardEventWrapper.swift in Sources */,
+				A8BB396E287728F9007BAEA4 /* Protocols.swift in Sources */,
+				A8BB397028772A77007BAEA4 /* Wireframe.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
@@ -397,6 +412,7 @@
 				8176E515287555E6005CE4CC /* RxChildViewController.swift in Sources */,
 				817DC64028757E2400E6BE38 /* Reactive+UIImagePickerController.swift in Sources */,
 				81574E232876C248000A5A41 /* Reactive+CLLocationManager.swift in Sources */,
+				A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */,
 				A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
