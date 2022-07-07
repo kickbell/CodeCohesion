@@ -53,3 +53,12 @@ extension Reactive where Base: UILabel {
         }
     }
 }
+
+extension Reactive where Base: UIButton {
+    var enabledResult: Binder<Bool> {
+        return Binder(base) { button, bool in
+            button.isEnabled = button.isEnabled
+            button.alpha = bool ? 1.0 : 0.5
+        }
+    }
+}

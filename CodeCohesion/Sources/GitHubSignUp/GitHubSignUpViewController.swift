@@ -46,14 +46,17 @@ class GitHubSignUpViewController: UIViewController {
             )
         )
         
+        
+        
         //Output
         viewModel.signupEnabled
-            .drive(onNext: { [weak self] valid in
-                self?.signupOutlet.isEnabled = valid
-                self?.signupOutlet.alpha = valid ? 1.0 : 0.5
-            })
+            .drive(signupOutlet.rx.enabledResult)
+//            .drive(onNext: { [weak self] valid in
+//                self?.signupOutlet.isEnabled = valid
+//                self?.signupOutlet.alpha = valid ? 1.0 : 0.5
+//            })
             .disposed(by: rx.disposeBag)
-        
+                
         viewModel.validatedUserName
             .drive(usernameValidationOutlet.rx.validationResult)
             .disposed(by: rx.disposeBag)
