@@ -45,6 +45,7 @@
 		A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */; };
 		A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB39732877382C007BAEA4 /* DefaultImplementations.swift */; };
 		A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB397528773836007BAEA4 /* BindingExtensions.swift */; };
+		A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB397728773ABC007BAEA4 /* String+URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A8BB39732877382C007BAEA4 /* DefaultImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
 		A8BB397528773836007BAEA4 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		A8BB397728773ABC007BAEA4 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		BCE3525A4EEFAAE3B5138353 /* Pods-CodeCohesion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.release.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.release.xcconfig"; sourceTree = "<group>"; };
 		C17A585DF3A30DE4D7641166 /* Pods-CodeCohesion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.debug.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +280,7 @@
 				A8BB39712877339D007BAEA4 /* ActivityIndicator.swift */,
 				A8BB39732877382C007BAEA4 /* DefaultImplementations.swift */,
 				A8BB397528773836007BAEA4 /* BindingExtensions.swift */,
+				A8BB397728773ABC007BAEA4 /* String+URL.swift */,
 			);
 			path = GitHubSignUp;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */,
 				A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
+				A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
