@@ -37,6 +37,8 @@
 		81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3E0A42876882D00B21D8A /* AllTogether.storyboard */; };
 		81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A628768A4000B21D8A /* CalcData.swift */; };
 		81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A828768A8600B21D8A /* CalcViewModel.swift */; };
+		A8BB3965287723D7007BAEA4 /* GitHubSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB3964287723D7007BAEA4 /* GitHubSignUpViewController.swift */; };
+		A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		81E3E0A42876882D00B21D8A /* AllTogether.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTogether.storyboard; sourceTree = "<group>"; };
 		81E3E0A628768A4000B21D8A /* CalcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcData.swift; sourceTree = "<group>"; };
 		81E3E0A828768A8600B21D8A /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
+		A8BB3964287723D7007BAEA4 /* GitHubSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewController.swift; sourceTree = "<group>"; };
+		A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSignUp.storyboard; sourceTree = "<group>"; };
 		BCE3525A4EEFAAE3B5138353 /* Pods-CodeCohesion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.release.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.release.xcconfig"; sourceTree = "<group>"; };
 		C17A585DF3A30DE4D7641166 /* Pods-CodeCohesion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.debug.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +190,7 @@
 		8176E4FF2875359D005CE4CC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				81574E262876CD11000A5A41 /* 질문모음.md */,
 				81328FB828752D2700E46974 /* DataLogicUI */,
 				8176E502287535B6005CE4CC /* DataSetter */,
 				8176E50528753636005CE4CC /* Overrides */,
@@ -193,7 +198,7 @@
 				8176E518287575CD005CE4CC /* PickerDelegate */,
 				81E3E0A32876881700B21D8A /* AllTogether */,
 				81574E1A2876ABC5000A5A41 /* Geolocation */,
-				81574E262876CD11000A5A41 /* 질문모음.md */,
+				A8BB3966287723D9007BAEA4 /* GitHubSignUp */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -248,6 +253,15 @@
 				81E3E0A828768A8600B21D8A /* CalcViewModel.swift */,
 			);
 			path = AllTogether;
+			sourceTree = "<group>";
+		};
+		A8BB3966287723D9007BAEA4 /* GitHubSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8BB3964287723D7007BAEA4 /* GitHubSignUpViewController.swift */,
+				A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */,
+			);
+			path = GitHubSignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +331,7 @@
 				81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */,
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
 				81328FA928752BFA00E46974 /* Main.storyboard in Resources */,
+				A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +390,7 @@
 				8176E50F28754E6E005CE4CC /* KeyboardEventWrapper.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
+				A8BB3965287723D7007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
 				81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */,
 				8176E50728753821005CE4CC /* SelectorViewController.swift in Sources */,

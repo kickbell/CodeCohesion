@@ -11,9 +11,9 @@ import RxCocoa
 
 public typealias ImagePickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
 
-extension UIImagePickerController: HasDelegate {
-    public typealias Delegate = ImagePickerDelegate
-}
+//extension UIImagePickerController: HasDelegate {
+//    public typealias Delegate = ImagePickerDelegate
+//}
 
 class RxImagePickerProxy: DelegateProxy<UIImagePickerController, ImagePickerDelegate>, DelegateProxyType, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
