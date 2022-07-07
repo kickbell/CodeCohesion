@@ -26,9 +26,64 @@ class GitHubSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bind()
     }
     
-
+    private func bind() {
+        
+        //Input
+        let viewModel = GitHubSignUpViewModel(
+            input: (
+                username: usernameOutlet.rx.text.orEmpty.asDriver(),
+                password: passwordOutlet.rx.text.orEmpty.asDriver(),
+                repeatedPassword: repeatedPasswordOutlet.rx.text.orEmpty.asDriver(),
+                loginTaps: signupOutlet.rx.tap.asSignal()
+            ),
+            dependency: (
+                API: GitHubDefaultAPI.sharedAPI,
+                validationService: GitHubDefaultValidationService.sharedValidationService,
+                wireframe: DefaultWireframe.shared
+            )
+        )
+        
+        //Output
+        viewModel.signupEnabled
+            .drive(onNext: { [weak self] valid in
+                self?.signupOutlet.isEnabled = valid
+                self?.signupOutlet.alpha = valid ? 1.0 : 0.5
+            })
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.validatedUserName
+            .drive(usernameValidationOutlet.rx.validationResult)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.validatedPassword
+            .drive(passwordValidationOutlet.rx.validationResult)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.validatedPasswordRepeated
+            .drive(repeatedPasswordValidationOutlet.rx.validationResult)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.signingIn
+            .drive(signingUpOulet.rx.isAnimating)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.signedIn
+            .drive(onNext: { signedIn in
+                print("User signed in \(signedIn)")
+            })
+            .disposed(by: rx.disposeBag)
+        
+        let tapBackground = UITapGestureRecognizer()
+        tapBackground.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: rx.disposeBag)
+        view.addGestureRecognizer(tapBackground)
+        
+    }
+    
 }
