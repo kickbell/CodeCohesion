@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		599DA35CF0D3F9E7B2F1C2E9 /* Pods_CodeCohesion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D74B9E016104D8E84050592 /* Pods_CodeCohesion.framework */; };
+		810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987972877CE0B00023496 /* APIWrappersViewController.swift */; };
+		8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109879A2877CE2200023496 /* APIWrappers.storyboard */; };
+		8109879D2877D0A900023496 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109879C2877D0A900023496 /* Operators.swift */; };
 		81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA128752BFA00E46974 /* AppDelegate.swift */; };
 		81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA328752BFA00E46974 /* SceneDelegate.swift */; };
 		81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA528752BFA00E46974 /* CalcViewController.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		5D74B9E016104D8E84050592 /* Pods_CodeCohesion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeCohesion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810987972877CE0B00023496 /* APIWrappersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrappersViewController.swift; sourceTree = "<group>"; };
+		8109879A2877CE2200023496 /* APIWrappers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APIWrappers.storyboard; sourceTree = "<group>"; };
+		8109879C2877D0A900023496 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		81328F9E28752BFA00E46974 /* CodeCohesion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCohesion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81328FA128752BFA00E46974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81328FA328752BFA00E46974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,16 @@
 				5D74B9E016104D8E84050592 /* Pods_CodeCohesion.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		810987992877CE0F00023496 /* APIWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				810987972877CE0B00023496 /* APIWrappersViewController.swift */,
+				8109879A2877CE2200023496 /* APIWrappers.storyboard */,
+				8109879C2877D0A900023496 /* Operators.swift */,
+			);
+			path = APIWrappers;
 			sourceTree = "<group>";
 		};
 		81328F9528752BFA00E46974 = {
@@ -213,6 +229,7 @@
 				81E3E0A32876881700B21D8A /* AllTogether */,
 				81574E1A2876ABC5000A5A41 /* Geolocation */,
 				A8BB3966287723D9007BAEA4 /* GitHubSignUp */,
+				810987992877CE0F00023496 /* APIWrappers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -351,6 +368,7 @@
 				81328FBA28752EA700E46974 /* Calc.storyboard in Resources */,
 				81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */,
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
+				8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */,
 				81328FA928752BFA00E46974 /* Main.storyboard in Resources */,
 				A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */,
 			);
@@ -412,7 +430,9 @@
 				8176E50F28754E6E005CE4CC /* KeyboardEventWrapper.swift in Sources */,
 				A8BB396E287728F9007BAEA4 /* Protocols.swift in Sources */,
 				A8BB397028772A77007BAEA4 /* Wireframe.swift in Sources */,
+				810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				8109879D2877D0A900023496 /* Operators.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
 				81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */,
