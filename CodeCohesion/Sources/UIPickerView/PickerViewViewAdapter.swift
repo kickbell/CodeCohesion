@@ -15,6 +15,9 @@ import RxCocoa
  DataAdapter - 데이터베이스에서 데이터를 채우거나 업데이트할 수 있는 도구 또는 클래스
  DataSource - DataSource는 DataSet, DataBase, XML 파일 등과 같이 데이터를 채우는 데이터 소스일 뿐입니다.
  Proxy - 서버와 클라이언트 사이에 중계기로서 대리로 통신을 수행하는 것을 가리킨다
+ 
+ 약간 음. DelegateProxy 같은 느낌보다는 PikcerDelegate, DataSource를 래퍼한 클래스인데 이제 rx처럼 오게끔하는..?
+ 그니까 약간 RxDataSource 같은 느낌이야. 이거 그대로 넣어주기만 하면 되잖아..?
  */
 
 final class PickerViewViewAdapter: NSObject,
