@@ -19,6 +19,10 @@ extension Reactive where Base: CLLocationManager {
         RxCLLocationManagerDelegateProxy.proxy(for: base).didUpdateLocationsSubject.asObservable()
     }
     
+    public var didFailWithError: Observable<Error> {
+        RxCLLocationManagerDelegateProxy.proxy(for: base).didFailWithErrorSubject.asObservable()
+    }
+    
     public var didChangeAuthorizationStatus: Observable<CLAuthorizationStatus> {
         return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:didChangeAuthorization:)))
             .map { a in
