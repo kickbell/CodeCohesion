@@ -11,6 +11,10 @@
 		810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987972877CE0B00023496 /* APIWrappersViewController.swift */; };
 		8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109879A2877CE2200023496 /* APIWrappers.storyboard */; };
 		8109879D2877D0A900023496 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109879C2877D0A900023496 /* Operators.swift */; };
+		810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987A328780AD900023496 /* SimplePickerViewExampleViewController.swift */; };
+		810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */; };
+		810987A928780B0600023496 /* SimpleUIPickerViewExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */; };
+		810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987AA287817AF00023496 /* PickerViewViewAdapter.swift */; };
 		81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA128752BFA00E46974 /* AppDelegate.swift */; };
 		81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA328752BFA00E46974 /* SceneDelegate.swift */; };
 		81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA528752BFA00E46974 /* CalcViewController.swift */; };
@@ -56,6 +60,10 @@
 		810987972877CE0B00023496 /* APIWrappersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrappersViewController.swift; sourceTree = "<group>"; };
 		8109879A2877CE2200023496 /* APIWrappers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APIWrappers.storyboard; sourceTree = "<group>"; };
 		8109879C2877D0A900023496 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		810987A328780AD900023496 /* SimplePickerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewExampleViewController.swift; sourceTree = "<group>"; };
+		810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerViewAdapterExampleViewController.swift; sourceTree = "<group>"; };
+		810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleUIPickerViewExample.storyboard; sourceTree = "<group>"; };
+		810987AA287817AF00023496 /* PickerViewViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewViewAdapter.swift; sourceTree = "<group>"; };
 		81328F9E28752BFA00E46974 /* CodeCohesion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCohesion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81328FA128752BFA00E46974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81328FA328752BFA00E46974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +146,17 @@
 				8109879C2877D0A900023496 /* Operators.swift */,
 			);
 			path = APIWrappers;
+			sourceTree = "<group>";
+		};
+		810987A528780ADC00023496 /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				810987A328780AD900023496 /* SimplePickerViewExampleViewController.swift */,
+				810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */,
+				810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */,
+				810987AA287817AF00023496 /* PickerViewViewAdapter.swift */,
+			);
+			path = UIPickerView;
 			sourceTree = "<group>";
 		};
 		81328F9528752BFA00E46974 = {
@@ -225,11 +244,12 @@
 				8176E502287535B6005CE4CC /* DataSetter */,
 				8176E50528753636005CE4CC /* Overrides */,
 				8176E5082875382E005CE4CC /* Selector */,
-				8176E518287575CD005CE4CC /* PickerDelegate */,
+				8176E518287575CD005CE4CC /* ImagePickerDelegate */,
 				81E3E0A32876881700B21D8A /* AllTogether */,
 				81574E1A2876ABC5000A5A41 /* Geolocation */,
 				A8BB3966287723D9007BAEA4 /* GitHubSignUp */,
 				810987992877CE0F00023496 /* APIWrappers */,
+				810987A528780ADC00023496 /* UIPickerView */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -262,7 +282,7 @@
 			path = Selector;
 			sourceTree = "<group>";
 		};
-		8176E518287575CD005CE4CC /* PickerDelegate */ = {
+		8176E518287575CD005CE4CC /* ImagePickerDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				8176E509287539EF005CE4CC /* PickerViewController.swift */,
@@ -272,7 +292,7 @@
 				817DC63D28757DEE00E6BE38 /* RxPickerViewController.swift */,
 				817DC63F28757E2400E6BE38 /* Reactive+UIImagePickerController.swift */,
 			);
-			path = PickerDelegate;
+			path = ImagePickerDelegate;
 			sourceTree = "<group>";
 		};
 		81E3E0A32876881700B21D8A /* AllTogether */ = {
@@ -370,6 +390,7 @@
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
 				8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */,
 				81328FA928752BFA00E46974 /* Main.storyboard in Resources */,
+				810987A928780B0600023496 /* SimpleUIPickerViewExample.storyboard in Resources */,
 				A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +453,7 @@
 				A8BB397028772A77007BAEA4 /* Wireframe.swift in Sources */,
 				810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */,
 				8109879D2877D0A900023496 /* Operators.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
@@ -446,9 +468,11 @@
 				A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
 				A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */,
+				810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
+				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,
