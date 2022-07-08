@@ -152,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				810987A328780AD900023496 /* SimplePickerViewExampleViewController.swift */,
-				810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */,
 				810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */,
+				810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */,
 				810987AA287817AF00023496 /* PickerViewViewAdapter.swift */,
 			);
 			path = UIPickerView;
