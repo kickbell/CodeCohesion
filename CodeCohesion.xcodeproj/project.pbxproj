@@ -53,6 +53,12 @@
 		A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB39732877382C007BAEA4 /* DefaultImplementations.swift */; };
 		A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB397528773836007BAEA4 /* BindingExtensions.swift */; };
 		A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB397728773ABC007BAEA4 /* String+URL.swift */; };
+		A8C8B987287B7B85001A0B11 /* WikipediaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B986287B7B85001A0B11 /* WikipediaSearchViewController.swift */; };
+		A8C8B98A287B7BB8001A0B11 /* WikipediaSearch .storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8C8B989287B7BB8001A0B11 /* WikipediaSearch .storyboard */; };
+		A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B98B287B7F7A001A0B11 /* WikipediaSearchCell.swift */; };
+		A8C8B98E287B7F7A001A0B11 /* WikipediaSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C8B98C287B7F7A001A0B11 /* WikipediaSearchCell.xib */; };
+		A8C8B991287B7FC8001A0B11 /* WikipediaImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B98F287B7FC8001A0B11 /* WikipediaImageCell.swift */; };
+		A8C8B992287B7FC8001A0B11 /* WikipediaImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C8B990287B7FC8001A0B11 /* WikipediaImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +111,12 @@
 		A8BB39732877382C007BAEA4 /* DefaultImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
 		A8BB397528773836007BAEA4 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		A8BB397728773ABC007BAEA4 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		A8C8B986287B7B85001A0B11 /* WikipediaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaSearchViewController.swift; sourceTree = "<group>"; };
+		A8C8B989287B7BB8001A0B11 /* WikipediaSearch .storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "WikipediaSearch .storyboard"; sourceTree = "<group>"; };
+		A8C8B98B287B7F7A001A0B11 /* WikipediaSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaSearchCell.swift; sourceTree = "<group>"; };
+		A8C8B98C287B7F7A001A0B11 /* WikipediaSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikipediaSearchCell.xib; sourceTree = "<group>"; };
+		A8C8B98F287B7FC8001A0B11 /* WikipediaImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaImageCell.swift; sourceTree = "<group>"; };
+		A8C8B990287B7FC8001A0B11 /* WikipediaImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikipediaImageCell.xib; sourceTree = "<group>"; };
 		BCE3525A4EEFAAE3B5138353 /* Pods-CodeCohesion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.release.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.release.xcconfig"; sourceTree = "<group>"; };
 		C17A585DF3A30DE4D7641166 /* Pods-CodeCohesion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.debug.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +262,7 @@
 				A8BB3966287723D9007BAEA4 /* GitHubSignUp */,
 				810987992877CE0F00023496 /* APIWrappers */,
 				810987A528780ADC00023496 /* UIPickerView */,
+				A8C8B988287B7B94001A0B11 /* WikipediaSearch  */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -322,6 +335,19 @@
 			path = GitHubSignUp;
 			sourceTree = "<group>";
 		};
+		A8C8B988287B7B94001A0B11 /* WikipediaSearch  */ = {
+			isa = PBXGroup;
+			children = (
+				A8C8B986287B7B85001A0B11 /* WikipediaSearchViewController.swift */,
+				A8C8B989287B7BB8001A0B11 /* WikipediaSearch .storyboard */,
+				A8C8B98B287B7F7A001A0B11 /* WikipediaSearchCell.swift */,
+				A8C8B98C287B7F7A001A0B11 /* WikipediaSearchCell.xib */,
+				A8C8B98F287B7FC8001A0B11 /* WikipediaImageCell.swift */,
+				A8C8B990287B7FC8001A0B11 /* WikipediaImageCell.xib */,
+			);
+			path = "WikipediaSearch ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,11 +408,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C8B992287B7FC8001A0B11 /* WikipediaImageCell.xib in Resources */,
 				8176E50D28754B31005CE4CC /* Picker.storyboard in Resources */,
+				A8C8B98E287B7F7A001A0B11 /* WikipediaSearchCell.xib in Resources */,
 				81574E1D2876AC22000A5A41 /* Geolocation.storyboard in Resources */,
 				81328FAE28752BFE00E46974 /* LaunchScreen.storyboard in Resources */,
 				81328FBA28752EA700E46974 /* Calc.storyboard in Resources */,
 				81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */,
+				A8C8B98A287B7BB8001A0B11 /* WikipediaSearch .storyboard in Resources */,
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
 				8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */,
 				81328FA928752BFA00E46974 /* Main.storyboard in Resources */,
@@ -446,6 +475,7 @@
 			files = (
 				81574E1F2876B98F000A5A41 /* GeolocationService.swift in Sources */,
 				817DC63E28757DEE00E6BE38 /* RxPickerViewController.swift in Sources */,
+				A8C8B987287B7B85001A0B11 /* WikipediaSearchViewController.swift in Sources */,
 				8176E50428753631005CE4CC /* BaseViewController.swift in Sources */,
 				A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */,
 				8176E50F28754E6E005CE4CC /* KeyboardEventWrapper.swift in Sources */,
@@ -466,6 +496,7 @@
 				A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */,
 				A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */,
 				A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
+				A8C8B991287B7FC8001A0B11 /* WikipediaImageCell.swift in Sources */,
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
 				A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */,
 				810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */,
@@ -473,6 +504,7 @@
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
 				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
+				A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,
