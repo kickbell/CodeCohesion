@@ -14,11 +14,33 @@ class WikipediaSearchViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var resultsTableView: UITableView!
     @IBOutlet var emptyView: UIView!
+    
+    let results = BehaviorRelay<[String]>.init(value: ["a","b","c","d","e"])
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        resultsTableView.register(UINib(nibName: "WikipediaSearchCell", bundle: nil), forCellReuseIdentifier: "WikipediaSearchCell")
+        
+        resultsTableView.rowHeight = 194
+        resultsTableView.hideEmptyCells()
+        
+        
+        results
+            .asDriver(onErrorJustReturn: [])
+            .drive(resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell", cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
+                cell.titleOutlet.text = viewModel
+                cell.URLOutlet.text = viewModel
+            }
+            .disposed(by: rx.disposeBag)
     }
     
+}
+
+
+
+extension UITableView {
+    func hideEmptyCells() {
+        self.tableFooterView = UIView(frame: .zero)
+    }
 }
