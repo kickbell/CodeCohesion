@@ -31,11 +31,24 @@ class SearchResultViewModel {
         self.title = configureTitle(URLs).asDriver(onErrorJustReturn: "Error during fetching")
     }
     
-    func configureTitle(_ imageURLs: Observable<[URL]>) -> Observable<String> {
-        Observable.just("")
+    private func configureTitle(_ imageURLs: Observable<[URL]>) -> Observable<String> {
+        let searchResult = self.searchResult
+        
+        let loadingValue: [URL]? = nil
+        
+        return imageURLs
+            .map(Optional.init)
+            .startWith(loadingValue)
+            .map { URLs in
+                if let URLs = URLs {
+                    return "\(searchResult.title) (\(URLs.count) pictures)"
+                } else {
+                    return "\(searchResult.title) (loading...)"
+                }
+            }
     }
 
-    func configureImageURLs() -> Observable<[URL]> {
+    private func configureImageURLs() -> Observable<[URL]> {
         let searchResult = self.searchResult
         return API.articleContent(searchResult)
             .observe(on: `$`.backgroundWorkScheduler)
