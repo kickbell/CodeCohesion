@@ -33,6 +33,13 @@ class WikipediaSearchViewController: UIViewController {
                 cell.URLOutlet.text = viewModel
             }
             .disposed(by: rx.disposeBag)
+        
+        results
+            .asDriver(onErrorJustReturn: [])
+            .map { $0.count != 0 }
+            .drive(self.emptyView.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+            
     }
     
 }
