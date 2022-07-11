@@ -15,6 +15,7 @@
 		810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */; };
 		810987A928780B0600023496 /* SimpleUIPickerViewExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */; };
 		810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987AA287817AF00023496 /* PickerViewViewAdapter.swift */; };
+		81324F86287BB8C300EBE1B2 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81324F85287BB8C300EBE1B2 /* Dependencies.swift */; };
 		81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA128752BFA00E46974 /* AppDelegate.swift */; };
 		81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA328752BFA00E46974 /* SceneDelegate.swift */; };
 		81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA528752BFA00E46974 /* CalcViewController.swift */; };
@@ -74,6 +75,7 @@
 		810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerViewAdapterExampleViewController.swift; sourceTree = "<group>"; };
 		810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleUIPickerViewExample.storyboard; sourceTree = "<group>"; };
 		810987AA287817AF00023496 /* PickerViewViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewViewAdapter.swift; sourceTree = "<group>"; };
+		81324F85287BB8C300EBE1B2 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		81328F9E28752BFA00E46974 /* CodeCohesion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCohesion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81328FA128752BFA00E46974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81328FA328752BFA00E46974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				A8C8B995287B8122001A0B11 /* Views */,
 				A8C8B996287B812A001A0B11 /* ViewModels */,
 				A8C8B99D287B8174001A0B11 /* WikipediaAPI */,
+				81324F85287BB8C300EBE1B2 /* Dependencies.swift */,
 			);
 			path = "WikipediaSearch ";
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				A8C8B994287B80E8001A0B11 /* SearchResultViewModel.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,
+				81324F86287BB8C300EBE1B2 /* Dependencies.swift in Sources */,
 				817DC63C287576D400E6BE38 /* RxImagePickerProxy.swift in Sources */,
 				81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */,
 				81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */,
