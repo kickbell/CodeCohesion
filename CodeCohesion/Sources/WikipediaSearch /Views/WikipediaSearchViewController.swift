@@ -16,6 +16,7 @@ class WikipediaSearchViewController: UIViewController {
     @IBOutlet var emptyView: UIView!
     
     let results = BehaviorRelay<[String]>.init(value: ["a","b","c","d","e"])
+//    let results = BehaviorRelay<[String]>.init(value: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
