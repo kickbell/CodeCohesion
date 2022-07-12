@@ -7,6 +7,21 @@
 
 import Foundation
 
+struct Repository: CustomDebugStringConvertible {
+    var name: String
+    var url: URL
+}
+
+extension Repository {
+    var debugDescription: String {
+        "\(name) | \(url)"
+    }
+}
+
+
+
+
 class GitHubSearchRepositoriesAPI {
+    
     
 }
