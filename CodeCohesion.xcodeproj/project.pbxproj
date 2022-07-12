@@ -15,6 +15,7 @@
 		810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */; };
 		810987A928780B0600023496 /* SimpleUIPickerViewExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */; };
 		810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987AA287817AF00023496 /* PickerViewViewAdapter.swift */; };
+		811F29C2287D01B6001DEEE3 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */; };
 		81324F86287BB8C300EBE1B2 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81324F85287BB8C300EBE1B2 /* Dependencies.swift */; };
 		81324F88287BEB5900EBE1B2 /* HtmlParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */; };
 		81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA128752BFA00E46974 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		810987A628780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerViewAdapterExampleViewController.swift; sourceTree = "<group>"; };
 		810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleUIPickerViewExample.storyboard; sourceTree = "<group>"; };
 		810987AA287817AF00023496 /* PickerViewViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewViewAdapter.swift; sourceTree = "<group>"; };
+		811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		81324F85287BB8C300EBE1B2 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlParsing.swift; sourceTree = "<group>"; };
 		81328F9E28752BFA00E46974 /* CodeCohesion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCohesion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +357,7 @@
 				A8C8B99D287B8174001A0B11 /* WikipediaAPI */,
 				81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */,
 				81324F85287BB8C300EBE1B2 /* Dependencies.swift */,
+				811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */,
 			);
 			path = "WikipediaSearch ";
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A8C8B987287B7B85001A0B11 /* WikipediaSearchViewController.swift in Sources */,
 				8176E50428753631005CE4CC /* BaseViewController.swift in Sources */,
 				A8C8B99C287B8169001A0B11 /* WikipediaSearchResult.swift in Sources */,
+				811F29C2287D01B6001DEEE3 /* ReachabilityService.swift in Sources */,
 				A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */,
 				8176E50F28754E6E005CE4CC /* KeyboardEventWrapper.swift in Sources */,
 				A8BB396E287728F9007BAEA4 /* Protocols.swift in Sources */,

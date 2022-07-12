@@ -20,7 +20,7 @@ class Dependencies {
     let backgroundWorkScheduler: ImmediateSchedulerType
     let mainScheduler: SerialDispatchQueueScheduler
     let wireframe: Wireframe
-//    let reachabilityService: ReachabilityService
+    let reachabilityService: ReachabilityService
     
     private init() {
         wireframe = DefaultWireframe()
@@ -31,7 +31,7 @@ class Dependencies {
         backgroundWorkScheduler = OperationQueueScheduler(operationQueue: operationQueue)
         
         mainScheduler = MainScheduler.instance
-//        reachabilityService = try! DefaultReachabilityService() // try! is only for simplicity sake
+        reachabilityService = try! DefaultReachabilityService() // try! is only for simplicity sake
     }
     
 }
