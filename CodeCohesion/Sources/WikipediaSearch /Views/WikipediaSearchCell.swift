@@ -44,8 +44,7 @@ class WikipediaSearchCell: UITableViewCell {
             
             viewModel.imageURLs
                 .drive(self.imagesOutlet.rx.items(cellIdentifier: "ImageCell", cellType: WikipediaImageCell.self)) { [weak self] _, url, cell in
-                    cell.imageOutlet.image = UIImage(systemName: "trash")
-//                    cell.downloadableImage = self?.imageService.imageFromURL(url, reachabilityService: reachabilityService) ?? Observable.empty()
+                    cell.downloadableImage = self?.imageService.imageFromURL(url, reachabilityService: reachabilityService) ?? Observable.empty()
                  }
                 .disposed(by: disposeBag)
         }
