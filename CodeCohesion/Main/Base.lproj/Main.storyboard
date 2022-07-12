@@ -261,6 +261,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="fS7-Yh-dcC" kind="show" id="Mn1-Pf-JsA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="PUU-jl-3NE" detailTextLabel="tco-d8-kgl" style="IBUITableViewCellStyleSubtitle" id="hnd-u1-YnM">
                                         <rect key="frame" x="0.0" y="563" width="414" height="52.5"/>
@@ -469,6 +472,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trf-Qz-jxs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918" y="-165"/>
+        </scene>
+        <!--GitHubSearchRepositories-->
+        <scene sceneID="a4n-QZ-m40">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GitHubSearchRepositories" id="fS7-Yh-dcC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CnE-wp-YKU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EoY-5C-Gfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="-132"/>
         </scene>
     </scenes>
     <resources>
