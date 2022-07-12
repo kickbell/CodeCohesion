@@ -23,7 +23,7 @@
                 </subviews>
             </view>
             <connections>
-                <outlet property="imageOutlet" destination="UFP-PL-ID0" id="M3H-e4-zK9"/>
+                <outlet property="imageOutlet" destination="UFP-PL-ID0" id="2de-xo-bWO"/>
             </connections>
             <point key="canvasLocation" x="249" y="290"/>
         </collectionViewCell>
