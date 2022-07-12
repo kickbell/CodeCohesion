@@ -16,6 +16,8 @@
 		810987A928780B0600023496 /* SimpleUIPickerViewExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */; };
 		810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810987AA287817AF00023496 /* PickerViewViewAdapter.swift */; };
 		811F29C2287D01B6001DEEE3 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */; };
+		811F29C4287D088C001DEEE3 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F29C3287D088C001DEEE3 /* ImageService.swift */; };
+		811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F29C5287D097D001DEEE3 /* Reachability.swift */; };
 		81324F86287BB8C300EBE1B2 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81324F85287BB8C300EBE1B2 /* Dependencies.swift */; };
 		81324F88287BEB5900EBE1B2 /* HtmlParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */; };
 		81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81328FA128752BFA00E46974 /* AppDelegate.swift */; };
@@ -78,6 +80,8 @@
 		810987A828780B0600023496 /* SimpleUIPickerViewExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleUIPickerViewExample.storyboard; sourceTree = "<group>"; };
 		810987AA287817AF00023496 /* PickerViewViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewViewAdapter.swift; sourceTree = "<group>"; };
 		811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		811F29C3287D088C001DEEE3 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		811F29C5287D097D001DEEE3 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		81324F85287BB8C300EBE1B2 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlParsing.swift; sourceTree = "<group>"; };
 		81328F9E28752BFA00E46974 /* CodeCohesion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCohesion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,6 +362,8 @@
 				81324F87287BEB5900EBE1B2 /* HtmlParsing.swift */,
 				81324F85287BB8C300EBE1B2 /* Dependencies.swift */,
 				811F29C1287D01B6001DEEE3 /* ReachabilityService.swift */,
+				811F29C5287D097D001DEEE3 /* Reachability.swift */,
+				811F29C3287D088C001DEEE3 /* ImageService.swift */,
 			);
 			path = "WikipediaSearch ";
 			sourceTree = "<group>";
@@ -549,12 +555,14 @@
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
 				A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */,
 				810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */,
+				811F29C4287D088C001DEEE3 /* ImageService.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
 				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
 				A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
+				811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				A8C8B994287B80E8001A0B11 /* SearchResultViewModel.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,

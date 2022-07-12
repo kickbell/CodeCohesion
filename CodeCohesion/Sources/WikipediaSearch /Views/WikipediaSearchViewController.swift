@@ -14,9 +14,6 @@ class WikipediaSearchViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var resultsTableView: UITableView!
     @IBOutlet var emptyView: UIView!
-    
-//    let results = BehaviorRelay<[String]>.init(value: ["a","b","c","d","e"])
-//    let results = BehaviorRelay<[String]>.init(value: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +38,7 @@ class WikipediaSearchViewController: UIViewController {
             .flatMapLatest { query in
                 API.searchResults(query)
                     .retry(3)
+                    .retryOnBecomesReachable([], reachabilityService: Dependencies.sharedDependencies.reachabilityService)
                     .startWith([])
                     .asDriver(onErrorJustReturn: [])
             }
@@ -50,7 +48,7 @@ class WikipediaSearchViewController: UIViewController {
         
         results
             .drive(resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell", cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
-//                cell.
+                cell.viewModel = viewModel
             }
             .disposed(by: rx.disposeBag)
         
@@ -86,7 +84,7 @@ class WikipediaSearchViewController: UIViewController {
     
     private func configureActivityIndicatorsShow() {
         Driver.combineLatest(DefaultWikipediaAPI.sharedAPI.loadingWikipediaData,
-                             DefaultWikipediaAPI.sharedAPI.loadingWikipediaData) { $0 || $1 }
+                             DefaultImageService.sharedImageService.loadingImage) { $0 || $1 }
             .distinctUntilChanged()
             .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
             .disposed(by: rx.disposeBag)

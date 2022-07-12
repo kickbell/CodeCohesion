@@ -16,34 +16,46 @@ class WikipediaSearchCell: UITableViewCell {
     @IBOutlet var URLOutlet: UILabel!
     @IBOutlet var imagesOutlet: UICollectionView!
     
-    let imageURLs = BehaviorRelay<[UIImage?]>.init(value: [
-        UIImage(systemName: "person.fill"),
-        UIImage(systemName: "house"),
-        UIImage(systemName: "photo.fill"),
-        UIImage(systemName: "trash"),
-        UIImage(systemName: "person"),
-    ])
+    let imageService = DefaultImageService.sharedImageService
+
+    var disposeBag: DisposeBag?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        self.imagesOutlet.register(UINib(nibName: String(describing: WikipediaImageCell.self), bundle: nil), forCellWithReuseIdentifier: "ImageCell")
-        
-        imageURLs
-            .asDriver(onErrorJustReturn: [])
-            .drive(imagesOutlet.rx.items(cellIdentifier: "ImageCell", cellType: WikipediaImageCell.self)) { [weak self] _, image, cell in
-                cell.imageOutlet.image = image
-            }
-            .disposed(by: rx.disposeBag)
-        
-        
-        
+        self.imagesOutlet.register(UINib(nibName: "WikipediaImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
     }
+    
+    var viewModel: SearchResultViewModel? {
+        didSet {
+            let disposeBag = DisposeBag()
+            
+            guard let viewModel = viewModel else {
+                return
+            }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+            viewModel.title
+                .map(Optional.init)
+                .drive(self.titleOutlet.rx.text)
+                .disposed(by: disposeBag)
+            
+            self.URLOutlet.text = viewModel.searchResult.URL.absoluteString
+            
+            let reachabilityService = Dependencies.sharedDependencies.reachabilityService
+            
+            viewModel.imageURLs
+                .drive(self.imagesOutlet.rx.items(cellIdentifier: "ImageCell", cellType: WikipediaImageCell.self)) { [weak self] _, url, cell in
+                    cell.imageOutlet.image = UIImage(systemName: "trash")
+//                    cell.downloadableImage = self?.imageService.imageFromURL(url, reachabilityService: reachabilityService) ?? Observable.empty()
+                 }
+                .disposed(by: disposeBag)
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.viewModel = nil
+        self.disposeBag = nil
     }
     
 }
