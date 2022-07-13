@@ -6,7 +6,7 @@
 //
 
 import ReactorKit
-import RxSwift
+import RxSwift  
 import RxCocoa
 
 final class GitHubSearchViewReactor: Reactor {
