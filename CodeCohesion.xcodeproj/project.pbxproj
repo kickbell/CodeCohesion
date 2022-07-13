@@ -27,6 +27,10 @@
 		81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81328FAA28752BFE00E46974 /* Assets.xcassets */; };
 		81328FAE28752BFE00E46974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81328FAC28752BFE00E46974 /* LaunchScreen.storyboard */; };
 		81328FBA28752EA700E46974 /* Calc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81328FB928752EA700E46974 /* Calc.storyboard */; };
+		814402B0287E837600FBD50E /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402AF287E837600FBD50E /* Version.swift */; };
+		814402B2287E84D900FBD50E /* Lenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B1287E84D900FBD50E /* Lenses.swift */; };
+		814402B4287E90EC00FBD50E /* Feedbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B3287E90EC00FBD50E /* Feedbacks.swift */; };
+		814402B6287E912800FBD50E /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B5287E912800FBD50E /* Observable+Extensions.swift */; };
 		81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E182876ABC1000A5A41 /* GeolocationViewController.swift */; };
 		81574E1D2876AC22000A5A41 /* Geolocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81574E1C2876AC22000A5A41 /* Geolocation.storyboard */; };
 		81574E1F2876B98F000A5A41 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E1E2876B98F000A5A41 /* GeolocationService.swift */; };
@@ -98,6 +102,10 @@
 		81328FAD28752BFE00E46974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81328FAF28752BFE00E46974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81328FB928752EA700E46974 /* Calc.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calc.storyboard; sourceTree = "<group>"; };
+		814402AF287E837600FBD50E /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		814402B1287E84D900FBD50E /* Lenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lenses.swift; sourceTree = "<group>"; };
+		814402B3287E90EC00FBD50E /* Feedbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedbacks.swift; sourceTree = "<group>"; };
+		814402B5287E912800FBD50E /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		81574E182876ABC1000A5A41 /* GeolocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationViewController.swift; sourceTree = "<group>"; };
 		81574E1C2876AC22000A5A41 /* Geolocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Geolocation.storyboard; sourceTree = "<group>"; };
 		81574E1E2876B98F000A5A41 /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
@@ -418,6 +426,10 @@
 				A8C8B9A3287DD17C001A0B11 /* GitHubSearchRepositoriesAPI.swift */,
 				A8C8B9A5287DD189001A0B11 /* UINavigationController+Extensions.swift */,
 				A8C8B9A7287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift */,
+				814402AF287E837600FBD50E /* Version.swift */,
+				814402B1287E84D900FBD50E /* Lenses.swift */,
+				814402B3287E90EC00FBD50E /* Feedbacks.swift */,
+				814402B5287E912800FBD50E /* Observable+Extensions.swift */,
 			);
 			path = GitHubSearchRepositories;
 			sourceTree = "<group>";
@@ -562,10 +574,12 @@
 				810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */,
+				814402B2287E84D900FBD50E /* Lenses.swift in Sources */,
 				8109879D2877D0A900023496 /* Operators.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
 				81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */,
+				814402B0287E837600FBD50E /* Version.swift in Sources */,
 				8176E50728753821005CE4CC /* SelectorViewController.swift in Sources */,
 				A8C8B99A287B814A001A0B11 /* WikipediaPage.swift in Sources */,
 				8176E51328755093005CE4CC /* RxDataSetterViewController.swift in Sources */,
@@ -584,12 +598,14 @@
 				811F29C4287D088C001DEEE3 /* ImageService.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
+				814402B6287E912800FBD50E /* Observable+Extensions.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
 				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
 				A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
 				811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
+				814402B4287E90EC00FBD50E /* Feedbacks.swift in Sources */,
 				A8C8B994287B80E8001A0B11 /* SearchResultViewModel.swift in Sources */,
 				A8C8B9A6287DD189001A0B11 /* UINavigationController+Extensions.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,
