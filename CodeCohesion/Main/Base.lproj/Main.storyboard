@@ -272,8 +272,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Simplest table view example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PUU-jl-3NE">
-                                                    <rect key="frame" x="20" y="8" width="205" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="GitHub Search With ReactorKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PUU-jl-3NE">
+                                                    <rect key="frame" x="20" y="8" width="223.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -288,6 +288,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="s2d-iw-TjL" kind="show" id="Oqd-tA-Cr2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="apA-Rc-pLk" detailTextLabel="YKC-hQ-dlJ" style="IBUITableViewCellStyleSubtitle" id="udL-xJ-EDG">
                                         <rect key="frame" x="0.0" y="615.5" width="414" height="52.5"/>
@@ -482,6 +485,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoY-5C-Gfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1959" y="-132"/>
+        </scene>
+        <!--GitHubSearchWithReactorKit-->
+        <scene sceneID="VZg-4p-p50">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GitHubSearchWithReactorKit" id="s2d-iw-TjL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gnx-05-U32"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOR-7V-oVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-99"/>
         </scene>
     </scenes>
     <resources>

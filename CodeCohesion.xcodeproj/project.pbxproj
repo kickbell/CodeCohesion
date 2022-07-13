@@ -31,6 +31,9 @@
 		814402B2287E84D900FBD50E /* Lenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B1287E84D900FBD50E /* Lenses.swift */; };
 		814402B4287E90EC00FBD50E /* Feedbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B3287E90EC00FBD50E /* Feedbacks.swift */; };
 		814402B6287E912800FBD50E /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B5287E912800FBD50E /* Observable+Extensions.swift */; };
+		814402B9287EB4F300FBD50E /* GitHubSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402B8287EB4F300FBD50E /* GitHubSearchViewController.swift */; };
+		814402BC287EB51500FBD50E /* GitHubSearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814402BB287EB51500FBD50E /* GitHubSearchViewReactor.swift */; };
+		814402BE287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814402BD287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard */; };
 		81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E182876ABC1000A5A41 /* GeolocationViewController.swift */; };
 		81574E1D2876AC22000A5A41 /* Geolocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81574E1C2876AC22000A5A41 /* Geolocation.storyboard */; };
 		81574E1F2876B98F000A5A41 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E1E2876B98F000A5A41 /* GeolocationService.swift */; };
@@ -106,6 +109,9 @@
 		814402B1287E84D900FBD50E /* Lenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lenses.swift; sourceTree = "<group>"; };
 		814402B3287E90EC00FBD50E /* Feedbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedbacks.swift; sourceTree = "<group>"; };
 		814402B5287E912800FBD50E /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		814402B8287EB4F300FBD50E /* GitHubSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewController.swift; sourceTree = "<group>"; };
+		814402BB287EB51500FBD50E /* GitHubSearchViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewReactor.swift; sourceTree = "<group>"; };
+		814402BD287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSearchWithReactorKit.storyboard; sourceTree = "<group>"; };
 		81574E182876ABC1000A5A41 /* GeolocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationViewController.swift; sourceTree = "<group>"; };
 		81574E1C2876AC22000A5A41 /* Geolocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Geolocation.storyboard; sourceTree = "<group>"; };
 		81574E1E2876B98F000A5A41 /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
@@ -272,6 +278,16 @@
 			path = DataLogicUI;
 			sourceTree = "<group>";
 		};
+		814402BA287EB4F600FBD50E /* GitHubSearchWithReactorKit */ = {
+			isa = PBXGroup;
+			children = (
+				814402B8287EB4F300FBD50E /* GitHubSearchViewController.swift */,
+				814402BB287EB51500FBD50E /* GitHubSearchViewReactor.swift */,
+				814402BD287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard */,
+			);
+			path = GitHubSearchWithReactorKit;
+			sourceTree = "<group>";
+		};
 		81574E1A2876ABC5000A5A41 /* Geolocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +316,7 @@
 				810987A528780ADC00023496 /* UIPickerView */,
 				A8C8B988287B7B94001A0B11 /* WikipediaSearch  */,
 				A8C8B9A0287DD156001A0B11 /* GitHubSearchRepositories */,
+				814402BA287EB4F600FBD50E /* GitHubSearchWithReactorKit */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -499,6 +516,7 @@
 				A8C8B98E287B7F7A001A0B11 /* WikipediaSearchCell.xib in Resources */,
 				81574E1D2876AC22000A5A41 /* Geolocation.storyboard in Resources */,
 				81328FAE28752BFE00E46974 /* LaunchScreen.storyboard in Resources */,
+				814402BE287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard in Resources */,
 				81328FBA28752EA700E46974 /* Calc.storyboard in Resources */,
 				81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */,
 				A8C8B98A287B7BB8001A0B11 /* WikipediaSearch .storyboard in Resources */,
@@ -595,9 +613,11 @@
 				81328FA628752BFA00E46974 /* CalcViewController.swift in Sources */,
 				A8BB397828773ABC007BAEA4 /* String+URL.swift in Sources */,
 				810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */,
+				814402BC287EB51500FBD50E /* GitHubSearchViewReactor.swift in Sources */,
 				811F29C4287D088C001DEEE3 /* ImageService.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
+				814402B9287EB4F300FBD50E /* GitHubSearchViewController.swift in Sources */,
 				814402B6287E912800FBD50E /* Observable+Extensions.swift in Sources */,
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
 				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
