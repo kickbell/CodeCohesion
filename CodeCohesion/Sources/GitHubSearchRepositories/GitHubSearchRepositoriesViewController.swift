@@ -26,7 +26,7 @@ class GitHubSearchRepositoriesViewController: UIViewController {
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Repository>>( //앞 헤더값, 뒤 셀데이터값
         configureCell: { _, tableView, indexPath, repository in
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") {
                 cell.textLabel?.text = repository.name
                 cell.detailTextLabel?.text = repository.url.absoluteString
                 return cell
@@ -61,13 +61,8 @@ class GitHubSearchRepositoriesViewController: UIViewController {
             searchText: searchBar.rx.text.orEmpty.changed.asSignal().throttle(.milliseconds(300)),
             loadNextPageTrigger: loadNextPageTrigger,
             performSearch: { URL in
-                //api
-                return Observable.just(SearchRepositoriesResponse.success((repositories: [
-                    Repository(name: "hh", url: URL),
-                    Repository(name: "hh22", url: URL),
-                    Repository(name: "hh33", url: URL),
-                    Repository(name: "hh55", url: URL),
-                ], nextURL: nil)))
+                GitHubSearchRepositoriesAPI.sharedAPI.loadSearchURL(URL)
+                    .trackActivity(activityIndicator)
             }
         )
         
