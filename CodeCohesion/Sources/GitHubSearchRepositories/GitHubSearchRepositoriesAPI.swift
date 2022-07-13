@@ -18,6 +18,14 @@ extension Repository {
     }
 }
 
+enum GitHubServiceError: Error {
+    case offline
+    case gitHubLimitReached
+    case networkError
+}
+
+typealias SearchRepositoriesResponse = Result<(repositories: [Repository], nextURL: URL?), GitHubServiceError>
+
 
 
 
