@@ -44,7 +44,7 @@ final class GitHubSearchViewReactor: Reactor {
             guard let page = self.currentState.nextPage else { return Observable.empty() }
             return Observable.concat([
                 Observable.just(Mutation.setLoadingNextPage(true)),
-                Observable.just(Mutation.appendRepos(["vv","dd"], nextPage: 2)),
+                Observable.just(Mutation.appendRepos(["vv","dd"], nextPage: page)),
                 Observable.just(Mutation.setLoadingNextPage(false))
             ])
         }

@@ -14,9 +14,13 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     var disposeBag = DisposeBag()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.reactor = GitHubSearchViewReactor()
+        
+//        bind(reactor: GitHubSearchViewReactor())
 //        deprecated
 //        tableView.scrollIndicatorInsets.top = tableView.contentInset.top
 //        searchController.dimsBackgroundDuringPresentation = false
@@ -48,6 +52,13 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
             }
             .map { _ in Reactor.Action.loadNextPage }
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.repos }
+            .debug()
+            .bind(to: tableView.rx.items(cellIdentifier: "cell")) { row, element, cell in
+                cell.textLabel?.text = element
+            }
             .disposed(by: disposeBag)
         
     }
