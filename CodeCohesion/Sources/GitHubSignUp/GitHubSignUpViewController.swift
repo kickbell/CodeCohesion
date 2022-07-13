@@ -1,5 +1,5 @@
 //
-//  GithubSignUpViewController.swift
+//  GitHubSignUpViewController.swift
 //  CodeCohesion
 //
 //  Created by jc.kim on 7/7/22.
