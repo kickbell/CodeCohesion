@@ -12,6 +12,9 @@ import RxCocoa
 import ReactorKit
 
 class GitHubSearchViewController: UIViewController, StoryboardView {
+    
+    typealias Reactor = GitHubSearchViewReactor
+    
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -53,7 +56,7 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
     }
      */
     
-    func bind(reactor: GitHubSearchViewReactor) {
+    func bind(reactor: Reactor) {
         searchController.searchBar.rx.text
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { Reactor.Action.updateQuery($0)}
