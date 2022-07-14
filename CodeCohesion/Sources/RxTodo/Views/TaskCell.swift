@@ -9,23 +9,59 @@ import UIKit
 
 import ReactorKit
 import RxSwift
+import Then
 
 class TaskCell: BaseTableViewCell, View {
     typealias Reactor = TaskCellReactor
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: Constants
+    
+    struct Constant {
+        static let titleLabelNumberOfLines = 2
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    struct Metric {
+        static let cellPadding: CGFloat = 15.0
+    }
+    
+    struct Font {
+        static let titleLabel = UIFont.systemFont(ofSize: 14)
+    }
+    
+    struct Color {
+        static let titleLabelText = UIColor.black
     }
     
     func bind(reactor: Reactor) {
         
     }
-
+    
+    // MARK: - UI
+    
+    let titleLabel = UILabel().then {
+        $0.font = Font.titleLabel
+        $0.textColor = Color.titleLabelText
+        $0.numberOfLines = Constant.titleLabelNumberOfLines
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    // MARK: - Initializing
+    
+    override func initialize() {
+        self.contentView.addSubview(self.titleLabel)
+    }
+    
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: Metric.cellPadding),
+            titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: Metric.cellPadding),
+            titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -Metric.cellPadding),
+            titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -Metric.cellPadding),
+        ])
+        
+    }
 }
