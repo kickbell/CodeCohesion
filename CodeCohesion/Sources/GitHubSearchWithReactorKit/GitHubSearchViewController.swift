@@ -5,6 +5,7 @@
 //  Created by ios on 2022/07/13.
 //
 
+import SafariServices
 import UIKit
 import RxSwift
 import RxCocoa
@@ -79,7 +80,18 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
             .bind(to: activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
-        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self, weak reactor] indexPath in //weak이 2개가 되네?
+                guard let `self` = self else { return }
+                self.view.endEditing(true)
+                self.tableView.deselectRow(at: indexPath, animated: false)
+                //여기서 reactor의 상태값을 불러올 수 있구나..
+                guard let repo = reactor?.currentState.repos[indexPath.row] else { return }
+                guard let url = URL(string: "http://github.com/\(repo)") else { return }
+                let viewController = SFSafariViewController(url: url)
+                self.searchController.present(viewController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
     
