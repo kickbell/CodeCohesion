@@ -17,14 +17,14 @@ final class GitHubSearchViewReactor: Reactor {
     }
     
     enum Mutation {
-        case setQuery(String?)
+//        case setQuery(String?)
         case setRepos([String], nextPage: Int?)
         case appendRepos([String], nextPage: Int?)
         case setLoadingNextPage(Bool)
     }
     
     struct State {
-        var query: String?
+//        var query: String?
         var repos: [String] = []
         var nextPage: Int?
         var isLoadingNextPage: Bool = false
@@ -36,11 +36,13 @@ final class GitHubSearchViewReactor: Reactor {
         switch action {
         case .updateQuery(let query):
             return Observable.concat([
-                Observable.just(Mutation.setQuery(query)),
+//                Observable.just(Mutation.setQuery(query)),
                 // MARK: - 이전요청 취소, take(until:) 최적화 아주 중요. 자세한 설명은 아래로.
+                Observable.just(Mutation.setLoadingNextPage(true)),
                 self.search(query: query, page: 1)
                     .take(until: self.action.filter(Action.isUpdateQueryAction))
-                    .map { Mutation.setRepos($0, nextPage: $1) }
+                    .map { Mutation.setRepos($0, nextPage: $1) },
+                Observable.just(Mutation.setLoadingNextPage(false))
             ])
         case .loadNextPage:
             guard !self.currentState.isLoadingNextPage else { return Observable.empty() }
@@ -55,10 +57,10 @@ final class GitHubSearchViewReactor: Reactor {
     
     func reduce(state: State, mutation: Mutation) -> State {
         switch mutation {
-        case .setQuery(let query):
-            var newState = state
-            newState.query = query
-            return newState
+//        case .setQuery(let query):
+//            var newState = state
+//            newState.query = query
+//            return newState
             
         case .setRepos(let repos, let nextPage):
             var newState = state
@@ -113,7 +115,7 @@ extension GitHubSearchViewReactor {
 
 
 /*
-  스트림을 방출할 것인데, 
+  스트림을 방출할 것인데,
   cancel previous request when the new `.updateQuery` action is fired
   take(until:)을 이용해서 새로운 요청이 들어오면 이전 요청을 취소할거야. 즉 종료시켜버리는거지.
   https://reactivex.io/documentation/operators/takeuntil.html
