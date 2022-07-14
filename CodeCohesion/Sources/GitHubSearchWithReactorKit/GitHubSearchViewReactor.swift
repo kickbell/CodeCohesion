@@ -17,14 +17,14 @@ final class GitHubSearchViewReactor: Reactor {
     }
     
     enum Mutation {
-//        case setQuery(String?)
+        case setQuery(String?)
         case setRepos([String], nextPage: Int?)
         case appendRepos([String], nextPage: Int?)
         case setLoadingNextPage(Bool)
     }
     
     struct State {
-//        var query: String?
+        var query: String?
         var repos: [String] = []
         var nextPage: Int?
         var isLoadingNextPage: Bool = false
@@ -36,7 +36,7 @@ final class GitHubSearchViewReactor: Reactor {
         switch action {
         case .updateQuery(let query):
             return Observable.concat([
-//                Observable.just(Mutation.setQuery(query)),
+                Observable.just(Mutation.setQuery(query)),
                 // MARK: - 이전요청 취소, take(until:) 최적화 아주 중요. 자세한 설명은 아래로.
                 Observable.just(Mutation.setLoadingNextPage(true)),
                 self.search(query: query, page: 1)
@@ -49,7 +49,9 @@ final class GitHubSearchViewReactor: Reactor {
             guard let page = self.currentState.nextPage else { return Observable.empty() }
             return Observable.concat([
                 Observable.just(Mutation.setLoadingNextPage(true)),
-                Observable.just(Mutation.appendRepos(Array(5...10).map { "\($0)" }, nextPage: page)),
+                self.search(query: self.currentState.query, page: page) // 이것때문에 query가 필요했구나..
+                    .take(until: self.action.filter(Action.isUpdateQueryAction))
+                    .map { Mutation.appendRepos($0, nextPage: $1) },
                 Observable.just(Mutation.setLoadingNextPage(false))
             ])
         }
@@ -57,10 +59,10 @@ final class GitHubSearchViewReactor: Reactor {
     
     func reduce(state: State, mutation: Mutation) -> State {
         switch mutation {
-//        case .setQuery(let query):
-//            var newState = state
-//            newState.query = query
-//            return newState
+        case .setQuery(let query):
+            var newState = state
+            newState.query = query
+            return newState
             
         case .setRepos(let repos, let nextPage):
             var newState = state
@@ -100,8 +102,14 @@ extension GitHubSearchViewReactor {
                 guard let dict = json as? [String: Any] else { return emptyResult }
                 guard let items = dict["items"] as? [[String: Any]] else { return emptyResult }
                 let repos = items.compactMap { $0["full_name"] as? String }
-                print(repos.isEmpty, "isempty??")
-                let nextPage = repos.isEmpty ? nil : page + 1
+                /*
+                 이것도 신기하다. 삼항연산자에서 1 : page + 1 이런식으로 해줄 수도 있었을 것 같다.
+                 그런데, ([String], Int?) 타입이잖아 ? 그래서 nil : page + 1 를 해주게 되면
+                 let nextPage가 Int 타입이 아니라 Int? 가 되는거다. 오호라..굳잡..
+                 
+                 아니 상식적으로 repos는 empty가 아니지. 저기서 pasing해서 받아왔는데. 그러니 이렇게 처리가 가능한 것임.
+                 */
+                let nextPage = repos.isEmpty ? nil : page + 1 //이것도 신기하다.
                 return (repos, nextPage)
             }
             .do(onError: { error in
