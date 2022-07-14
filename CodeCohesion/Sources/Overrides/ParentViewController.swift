@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class ParentViewController: UIViewController {
     
     var viewWillAppearActions: [(Bool) -> ()] = []
     var viewWillDisappearActions: [(Bool) -> ()] = []
@@ -24,7 +24,7 @@ class BaseViewController: UIViewController {
     
 }
 
-class ChildViewController: BaseViewController {
+class ChildViewController: ParentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
