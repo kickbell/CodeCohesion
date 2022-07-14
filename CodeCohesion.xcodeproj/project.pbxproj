@@ -40,7 +40,7 @@
 		81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E202876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift */; };
 		81574E232876C248000A5A41 /* Reactive+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81574E222876C248000A5A41 /* Reactive+CLLocationManager.swift */; };
 		8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176E500287535B2005CE4CC /* DataSetterViewController.swift */; };
-		8176E50428753631005CE4CC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176E50328753631005CE4CC /* BaseViewController.swift */; };
+		8176E50428753631005CE4CC /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176E50328753631005CE4CC /* ParentViewController.swift */; };
 		8176E50728753821005CE4CC /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176E50628753821005CE4CC /* SelectorViewController.swift */; };
 		8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176E509287539EF005CE4CC /* PickerViewController.swift */; };
 		8176E50D28754B31005CE4CC /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8176E50C28754B31005CE4CC /* Picker.storyboard */; };
@@ -52,6 +52,13 @@
 		817DC63C287576D400E6BE38 /* RxImagePickerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DC63B287576D400E6BE38 /* RxImagePickerProxy.swift */; };
 		817DC63E28757DEE00E6BE38 /* RxPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DC63D28757DEE00E6BE38 /* RxPickerViewController.swift */; };
 		817DC64028757E2400E6BE38 /* Reactive+UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DC63F28757E2400E6BE38 /* Reactive+UIImagePickerController.swift */; };
+		81C0BA4B287FF8E1009B003F /* RxTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C0BA4A287FF8E1009B003F /* RxTodo.storyboard */; };
+		81C0BA50287FFC05009B003F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA4F287FFC05009B003F /* BaseViewController.swift */; };
+		81C0BA52287FFC2D009B003F /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA51287FFC2D009B003F /* TaskListViewController.swift */; };
+		81C0BA54287FFC6A009B003F /* TaskListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA53287FFC6A009B003F /* TaskListViewReactor.swift */; };
+		81C0BA5628800433009B003F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5528800433009B003F /* TaskCell.swift */; };
+		81C0BA5B288004A0009B003F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */; };
+		81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5C28800523009B003F /* TaskCellReactor.swift */; };
 		81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */; };
 		81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3E0A42876882D00B21D8A /* AllTogether.storyboard */; };
 		81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A628768A4000B21D8A /* CalcData.swift */; };
@@ -119,7 +126,7 @@
 		81574E222876C248000A5A41 /* Reactive+CLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+CLLocationManager.swift"; sourceTree = "<group>"; };
 		81574E262876CD11000A5A41 /* 질문모음.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "질문모음.md"; sourceTree = "<group>"; };
 		8176E500287535B2005CE4CC /* DataSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetterViewController.swift; sourceTree = "<group>"; };
-		8176E50328753631005CE4CC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8176E50328753631005CE4CC /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		8176E50628753821005CE4CC /* SelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
 		8176E509287539EF005CE4CC /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		8176E50C28754B31005CE4CC /* Picker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
@@ -131,6 +138,13 @@
 		817DC63B287576D400E6BE38 /* RxImagePickerProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerProxy.swift; sourceTree = "<group>"; };
 		817DC63D28757DEE00E6BE38 /* RxPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxPickerViewController.swift; sourceTree = "<group>"; };
 		817DC63F28757E2400E6BE38 /* Reactive+UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImagePickerController.swift"; sourceTree = "<group>"; };
+		81C0BA4A287FF8E1009B003F /* RxTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxTodo.storyboard; sourceTree = "<group>"; };
+		81C0BA4F287FFC05009B003F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		81C0BA51287FFC2D009B003F /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		81C0BA53287FFC6A009B003F /* TaskListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewReactor.swift; sourceTree = "<group>"; };
+		81C0BA5528800433009B003F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		81C0BA5C28800523009B003F /* TaskCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellReactor.swift; sourceTree = "<group>"; };
 		81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTogetherViewController.swift; sourceTree = "<group>"; };
 		81E3E0A42876882D00B21D8A /* AllTogether.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTogether.storyboard; sourceTree = "<group>"; };
 		81E3E0A628768A4000B21D8A /* CalcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcData.swift; sourceTree = "<group>"; };
@@ -317,6 +331,7 @@
 				A8C8B988287B7B94001A0B11 /* WikipediaSearch  */,
 				A8C8B9A0287DD156001A0B11 /* GitHubSearchRepositories */,
 				814402BA287EB4F600FBD50E /* GitHubSearchWithReactorKit */,
+				81C0BA4C287FF8E4009B003F /* RxTodo */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -333,7 +348,7 @@
 		8176E50528753636005CE4CC /* Overrides */ = {
 			isa = PBXGroup;
 			children = (
-				8176E50328753631005CE4CC /* BaseViewController.swift */,
+				8176E50328753631005CE4CC /* ParentViewController.swift */,
 				8176E514287555E6005CE4CC /* RxChildViewController.swift */,
 			);
 			path = Overrides;
@@ -360,6 +375,36 @@
 				817DC63F28757E2400E6BE38 /* Reactive+UIImagePickerController.swift */,
 			);
 			path = ImagePickerDelegate;
+			sourceTree = "<group>";
+		};
+		81C0BA4C287FF8E4009B003F /* RxTodo */ = {
+			isa = PBXGroup;
+			children = (
+				81C0BA4A287FF8E1009B003F /* RxTodo.storyboard */,
+				81C0BA5828800444009B003F /* ViewControllers */,
+				81C0BA572880043A009B003F /* Views */,
+			);
+			path = RxTodo;
+			sourceTree = "<group>";
+		};
+		81C0BA572880043A009B003F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */,
+				81C0BA5528800433009B003F /* TaskCell.swift */,
+				81C0BA5C28800523009B003F /* TaskCellReactor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81C0BA5828800444009B003F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81C0BA4F287FFC05009B003F /* BaseViewController.swift */,
+				81C0BA51287FFC2D009B003F /* TaskListViewController.swift */,
+				81C0BA53287FFC6A009B003F /* TaskListViewReactor.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		81E3E0A32876881700B21D8A /* AllTogether */ = {
@@ -519,6 +564,7 @@
 				814402BE287EB52700FBD50E /* GitHubSearchWithReactorKit.storyboard in Resources */,
 				81328FBA28752EA700E46974 /* Calc.storyboard in Resources */,
 				81328FAB28752BFE00E46974 /* Assets.xcassets in Resources */,
+				81C0BA4B287FF8E1009B003F /* RxTodo.storyboard in Resources */,
 				A8C8B98A287B7BB8001A0B11 /* WikipediaSearch .storyboard in Resources */,
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
 				8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */,
@@ -582,7 +628,7 @@
 				81574E1F2876B98F000A5A41 /* GeolocationService.swift in Sources */,
 				817DC63E28757DEE00E6BE38 /* RxPickerViewController.swift in Sources */,
 				A8C8B987287B7B85001A0B11 /* WikipediaSearchViewController.swift in Sources */,
-				8176E50428753631005CE4CC /* BaseViewController.swift in Sources */,
+				8176E50428753631005CE4CC /* ParentViewController.swift in Sources */,
 				A8C8B99C287B8169001A0B11 /* WikipediaSearchResult.swift in Sources */,
 				811F29C2287D01B6001DEEE3 /* ReachabilityService.swift in Sources */,
 				A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */,
@@ -598,8 +644,10 @@
 				8176E51128754EBD005CE4CC /* ImagePickerWrapper.swift in Sources */,
 				81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */,
 				814402B0287E837600FBD50E /* Version.swift in Sources */,
+				81C0BA5B288004A0009B003F /* BaseTableViewCell.swift in Sources */,
 				8176E50728753821005CE4CC /* SelectorViewController.swift in Sources */,
 				A8C8B99A287B814A001A0B11 /* WikipediaPage.swift in Sources */,
+				81C0BA5628800433009B003F /* TaskCell.swift in Sources */,
 				8176E51328755093005CE4CC /* RxDataSetterViewController.swift in Sources */,
 				8176E515287555E6005CE4CC /* RxChildViewController.swift in Sources */,
 				817DC64028757E2400E6BE38 /* Reactive+UIImagePickerController.swift in Sources */,
@@ -622,8 +670,10 @@
 				A8BB39742877382C007BAEA4 /* DefaultImplementations.swift in Sources */,
 				810987A428780AD900023496 /* SimplePickerViewExampleViewController.swift in Sources */,
 				A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */,
+				81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
 				811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */,
+				81C0BA54287FFC6A009B003F /* TaskListViewReactor.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				814402B4287E90EC00FBD50E /* Feedbacks.swift in Sources */,
 				A8C8B994287B80E8001A0B11 /* SearchResultViewModel.swift in Sources */,
@@ -633,8 +683,10 @@
 				817DC63C287576D400E6BE38 /* RxImagePickerProxy.swift in Sources */,
 				81324F88287BEB5900EBE1B2 /* HtmlParsing.swift in Sources */,
 				81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */,
+				81C0BA52287FFC2D009B003F /* TaskListViewController.swift in Sources */,
 				81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */,
 				A8C8B9A8287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift in Sources */,
+				81C0BA50287FFC05009B003F /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
