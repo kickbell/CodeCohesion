@@ -28,6 +28,8 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
         title = "GitHub Search"
     }
     
+    
+    /*
     // MARK: - 아 이게 있으면, 시작하자마자 first responsor 처럼 바로 검색바가 선택되면서 애니메이션이 실행됨
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,6 +38,7 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
         searchController.isActive = false
         UIView.setAnimationsEnabled(true)
     }
+     */
     
     func bind(reactor: GitHubSearchViewReactor) {
         searchController.searchBar.rx.text
@@ -55,7 +58,7 @@ class GitHubSearchViewController: UIViewController, StoryboardView {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.repos }
-            .debug()
+//            .debug()
             .bind(to: tableView.rx.items(cellIdentifier: "cell")) { row, element, cell in
                 cell.textLabel?.text = element
             }

@@ -37,14 +37,15 @@ final class GitHubSearchViewReactor: Reactor {
         case .updateQuery(let query):
             return Observable.concat([
                 Observable.just(Mutation.setQuery(query)),
-                Observable.just(Mutation.setRepos(["123","456","890"], nextPage: 1))
+                Observable.just(Mutation.setRepos(Array(1...30).map { "\($0)" }
+                                                  , nextPage: 1))
             ])
         case .loadNextPage:
             guard !self.currentState.isLoadingNextPage else { return Observable.empty() }
             guard let page = self.currentState.nextPage else { return Observable.empty() }
             return Observable.concat([
                 Observable.just(Mutation.setLoadingNextPage(true)),
-                Observable.just(Mutation.appendRepos(["vv","dd"], nextPage: page)),
+                Observable.just(Mutation.appendRepos(Array(5...10).map { "\($0)" }, nextPage: page)),
                 Observable.just(Mutation.setLoadingNextPage(false))
             ])
         }
@@ -76,4 +77,34 @@ final class GitHubSearchViewReactor: Reactor {
         }
     }
     
+}
+
+
+// MARK: - API
+
+extension GitHubSearchViewReactor {
+    private func url(for query: String?, page: Int) -> URL? {
+        guard let query = query, !query.isEmpty else { return nil }
+        return URL(string: "https://api.github.com/search/repositories?q=\(query)&page=\(page)")
+    }
+    
+    private func search(query: String?, page: Int) -> Observable<(repos: [String], nextPage: Int?)> {
+        let emptyResult: ([String], Int?) = ([], nil)
+        guard let url = self.url(for: query, page: page) else { return .just(emptyResult) }
+        return URLSession.shared.rx.json(url: url)
+            .map { json in
+                guard let dict = json as? [String: Any] else { return emptyResult }
+                guard let items = dict["items"] as? [[String: Any]] else { return emptyResult }
+                let repos = items.compactMap { $0["full_name"] as? String }
+                print(repos.isEmpty, "isempty??")
+                let nextPage = repos.isEmpty ? nil : page + 1
+                return (repos, nextPage)
+            }
+            .do(onError: { error in
+                if case let .some(.httpRequestFailed(response, _)) = error as? RxCocoaURLError, response.statusCode == 403 { //굳.
+                    print("⚠️ GitHub API rate limit exceeded. Wait for 60 seconds and try again.")
+                }
+            })
+            .catchAndReturn(emptyResult)
+    }
 }
