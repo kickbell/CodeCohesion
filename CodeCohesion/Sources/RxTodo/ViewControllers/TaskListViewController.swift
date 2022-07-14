@@ -20,27 +20,28 @@ class TaskListViewController: BaseViewController, View {
     }
     let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
     
-    // MARK: - Initializing
-    
-    init(reactor: TaskListViewReactor) {
-        super.init()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationItem.rightBarButtonItem = self.addButtonItem
-        self.reactor = reactor
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.reactor = TaskListViewReactor()
+        self.title = "RxTodo"
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.addButtonItem
         self.view.backgroundColor = .white
         self.view.addSubview(self.tableView)
     }
     
+    let data = Observable.just(Array(1...30))
+    
     
     func bind(reactor: TaskListViewReactor) {
+        
+        data
+            .bind(to: tableView.rx.items(cellIdentifier: String(describing: TaskCell.self), cellType: TaskCell.self)) { row, element, cell in
+                cell.titleLabel.text = "\(element) gogo"
+            }
+            .disposed(by: disposeBag)
+            
+            
         
     }
 

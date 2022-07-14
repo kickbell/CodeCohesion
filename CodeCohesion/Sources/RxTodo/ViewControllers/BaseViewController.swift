@@ -10,16 +10,6 @@ import RxSwift
 
 class BaseViewController: UIViewController {
     
-    // MARK: Initializing
-
-    init() {
-      super.init(nibName: nil, bundle: nil)
-    }
-
-    required convenience init?(coder aDecoder: NSCoder) {
-      self.init()
-    }
-    
     var disposeBag = DisposeBag()
 
     // MARK: Layout Constraints
