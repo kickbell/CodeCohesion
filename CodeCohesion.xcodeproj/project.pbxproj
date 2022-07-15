@@ -59,6 +59,8 @@
 		81C0BA5628800433009B003F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5528800433009B003F /* TaskCell.swift */; };
 		81C0BA5B288004A0009B003F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */; };
 		81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5C28800523009B003F /* TaskCellReactor.swift */; };
+		81CFA4EA2880FD4200CA4767 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4E92880FD4200CA4767 /* Task.swift */; };
+		81CFA4ED2881094F00CA4767 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */; };
 		81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */; };
 		81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3E0A42876882D00B21D8A /* AllTogether.storyboard */; };
 		81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A628768A4000B21D8A /* CalcData.swift */; };
@@ -145,6 +147,8 @@
 		81C0BA5528800433009B003F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		81C0BA5C28800523009B003F /* TaskCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellReactor.swift; sourceTree = "<group>"; };
+		81CFA4E92880FD4200CA4767 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTogetherViewController.swift; sourceTree = "<group>"; };
 		81E3E0A42876882D00B21D8A /* AllTogether.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTogether.storyboard; sourceTree = "<group>"; };
 		81E3E0A628768A4000B21D8A /* CalcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcData.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				81C0BA4A287FF8E1009B003F /* RxTodo.storyboard */,
 				81C0BA5828800444009B003F /* ViewControllers */,
 				81C0BA572880043A009B003F /* Views */,
+				81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */,
 			);
 			path = RxTodo;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */,
 				81C0BA5528800433009B003F /* TaskCell.swift */,
 				81C0BA5C28800523009B003F /* TaskCellReactor.swift */,
+				81CFA4E92880FD4200CA4767 /* Task.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -677,9 +683,11 @@
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
 				814402B4287E90EC00FBD50E /* Feedbacks.swift in Sources */,
 				A8C8B994287B80E8001A0B11 /* SearchResultViewModel.swift in Sources */,
+				81CFA4ED2881094F00CA4767 /* UITableViewCell+Extension.swift in Sources */,
 				A8C8B9A6287DD189001A0B11 /* UINavigationController+Extensions.swift in Sources */,
 				81328FA228752BFA00E46974 /* AppDelegate.swift in Sources */,
 				81324F86287BB8C300EBE1B2 /* Dependencies.swift in Sources */,
+				81CFA4EA2880FD4200CA4767 /* Task.swift in Sources */,
 				817DC63C287576D400E6BE38 /* RxImagePickerProxy.swift in Sources */,
 				81324F88287BEB5900EBE1B2 /* HtmlParsing.swift in Sources */,
 				81328FA428752BFA00E46974 /* SceneDelegate.swift in Sources */,
