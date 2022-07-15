@@ -45,31 +45,30 @@ class TaskListViewController: BaseViewController, View {
     
     let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
     
-    
+    // MARK: - View LifeCycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: - Method
+    
+    private func setup() {
         self.reactor = TaskListViewReactor()
         self.title = "RxTodo"
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.navigationItem.rightBarButtonItem = self.addButtonItem
         self.view.backgroundColor = .white
         self.view.addSubview(self.tableView)
-        
-        
     }
     
-    let data = Observable.just(Array(1...30))
-    
+    // MARK: - Binding
     
     func bind(reactor: TaskListViewReactor) {
-        
-        data
-            .bind(to: tableView.rx.items(cellIdentifier: String(describing: TaskCell.self), cellType: TaskCell.self)) { row, element, cell in
-                cell.titleLabel.text = "\(element) gogo"
-            }
+        reactor.state.map(\.sections)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-            
     }
 
     

@@ -35,7 +35,7 @@ final class TaskCellReactor: Reactor {
     
     let initialState: Task
     
-    init(task: Task) {
+    init(_ task: Task) {
         self.initialState = task
     }
 }
