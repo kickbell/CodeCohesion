@@ -7,6 +7,9 @@
 
 import RxSwift
 import ReactorKit
+import RxDataSources
+
+typealias TaskListSection = SectionModel<Void, TaskCellReactor>
 
 final class TaskListViewReactor: Reactor {
     
