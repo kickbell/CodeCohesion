@@ -52,6 +52,12 @@ class TaskListViewController: BaseViewController, View {
         setup()
     }
     
+    // MARK: - tableView.setEditing(editing, animated: true) 꼭 이써야 함
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+    }
+    
     // MARK: - Method
     
     private func setup() {
@@ -66,6 +72,13 @@ class TaskListViewController: BaseViewController, View {
     // MARK: - Binding
     
     func bind(reactor: TaskListViewReactor) {
+        /*
+         이 코드 여기말고 viewDidLoad 같은 곳에 적으면 에러가 발생한다.
+         RxDataSources/TableViewSectionedDataSource.swift:76: Assertion failed: Data source is already bound. Please write this line before binding call (`bindTo`, `drive`). Data source must first be completely configured, and then bound after that, otherwise there could be runtime bugs, glitches, or partial malfunctions.
+         */
+        self.dataSource.canEditRowAtIndexPath = { _, _  in true }
+        self.dataSource.canMoveRowAtIndexPath = { _, _  in true }
+        
         reactor.state.map(\.sections)
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
@@ -75,5 +88,3 @@ class TaskListViewController: BaseViewController, View {
     
 
 }
-
-
