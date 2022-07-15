@@ -32,8 +32,13 @@ class TaskCell: BaseTableViewCell, View {
         static let titleLabelText = UIColor.black
     }
     
+    /*
+     currentState 는 TaskCellReactor 의 State 이므로 Task 타입이다.
+     따라서 id, title, isDone, memo를 사용할 수가 있다.
+     */
     func bind(reactor: Reactor) {
-        
+        self.titleLabel.text = reactor.currentState.title
+        self.accessoryType = reactor.currentState.isDone ? .checkmark : .none
     }
     
     // MARK: - UI

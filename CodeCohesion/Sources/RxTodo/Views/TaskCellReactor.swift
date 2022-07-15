@@ -41,6 +41,3 @@ final class TaskCellReactor: Reactor {
 }
 
 
-struct Task {
-    
-}
