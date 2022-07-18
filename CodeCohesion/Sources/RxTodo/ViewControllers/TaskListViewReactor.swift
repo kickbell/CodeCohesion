@@ -16,11 +16,13 @@ final class TaskListViewReactor: Reactor {
     enum Action {
         case refresh
         case deleteTask(IndexPath)
+        case moveTask(IndexPath, IndexPath)
     }
     
     enum Mutation {
         case setSections([TaskListSection])
         case deleteSectionItem(IndexPath)
+        case moveSectionItem(IndexPath, IndexPath)
     }
     
     struct State {
@@ -41,20 +43,8 @@ final class TaskListViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case let .deleteTask(indexPath):
-            //원래는 이건데 Array+SectionModel에 subscript가 추가되어 있다. 공부할 것.
-            //let task = self.currentState.sections[indexPath.section].items[indexPath.item].currentState
-            //TaskListViewReactor에서 셀인 TaskCellReactor의 currentState을 가져오고 있음.
-            //해당 currentState은 특정 값이 아니라 Task 타입이다.
-            let task = self.currentState.sections[indexPath].currentState
-            return self.provider.taskService
-                .delete(taskID: task.id)
-                .map { task in
-                    //여기서 쓸거면 의미가 있어.
-                    //일단 이렇게 바꿔보자. 리턴값을 이렇게 받아다가 쓴다고 치자고.
-                    //그러면 의미가있다. 
-                    return .deleteSectionItem(indexPath)
-                }
-//                .flatMap { _ in Observable.empty() }
+            return Observable.just(Void())
+                .map { .deleteSectionItem(indexPath) }
         case .refresh:
             return self.provider.taskService
                 .fetchTasks()
@@ -63,6 +53,9 @@ final class TaskListViewReactor: Reactor {
                     let section = TaskListSection(model: Void(), items: sectionItmes)
                     return .setSections([section])
                 }
+        case let .moveTask(sourceIndexPath, destinationIndexPath):
+            return Observable.just(Void())
+                .map { .moveSectionItem(sourceIndexPath, destinationIndexPath)}
         }
     }
     
@@ -74,6 +67,10 @@ final class TaskListViewReactor: Reactor {
             return state
         case let .setSections(sections):
             state.sections = sections
+            return state
+        case let .moveSectionItem(sourceIndexPath, destinationIndexPath):
+            let sectionItem = state.sections.remove(at: sourceIndexPath)
+            state.sections.insert(sectionItem, at: destinationIndexPath)
             return state
         }
     }

@@ -89,11 +89,13 @@ class TaskListViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         reactor.state.map(\.sections)
+            .debug("sections...")
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         /*
-         RxCocoa에 이미 구현되어 있다.
+         RxCocoa에 이미 구현되어 있다.(itemDeleted, itemMoved...)
+         방식은 똑같다. RxCocoa에 있는 DelegateProxy 를 사용한다. 
          
          public var itemDeleted: ControlEvent<IndexPath> {
              let source = self.dataSource.methodInvoked(#selector(UITableViewDataSource.tableView(_:commit:forRowAt:)))
@@ -109,6 +111,11 @@ class TaskListViewController: BaseViewController, View {
          */
         tableView.rx.itemDeleted
             .map(Reactor.Action.deleteTask)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemMoved
+            .map(Reactor.Action.moveTask)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
