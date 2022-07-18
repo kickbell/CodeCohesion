@@ -93,6 +93,8 @@
 		A8C8B9A4287DD17C001A0B11 /* GitHubSearchRepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B9A3287DD17C001A0B11 /* GitHubSearchRepositoriesAPI.swift */; };
 		A8C8B9A6287DD189001A0B11 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B9A5287DD189001A0B11 /* UINavigationController+Extensions.swift */; };
 		A8C8B9A8287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B9A7287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift */; };
+		A8C8B9AB2885CBDB001A0B11 /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B9AA2885CBDB001A0B11 /* TaskEditViewController.swift */; };
+		A8C8B9AD2885CBF0001A0B11 /* TaskEditViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8B9AC2885CBF0001A0B11 /* TaskEditViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +187,8 @@
 		A8C8B9A3287DD17C001A0B11 /* GitHubSearchRepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoriesAPI.swift; sourceTree = "<group>"; };
 		A8C8B9A5287DD189001A0B11 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		A8C8B9A7287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepositoriesViewController.swift; sourceTree = "<group>"; };
+		A8C8B9AA2885CBDB001A0B11 /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		A8C8B9AC2885CBF0001A0B11 /* TaskEditViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewReactor.swift; sourceTree = "<group>"; };
 		BCE3525A4EEFAAE3B5138353 /* Pods-CodeCohesion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.release.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.release.xcconfig"; sourceTree = "<group>"; };
 		C17A585DF3A30DE4D7641166 /* Pods-CodeCohesion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeCohesion.debug.xcconfig"; path = "Target Support Files/Pods-CodeCohesion/Pods-CodeCohesion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,6 +425,8 @@
 				81C0BA4F287FFC05009B003F /* BaseViewController.swift */,
 				81C0BA51287FFC2D009B003F /* TaskListViewController.swift */,
 				81C0BA53287FFC6A009B003F /* TaskListViewReactor.swift */,
+				A8C8B9AA2885CBDB001A0B11 /* TaskEditViewController.swift */,
+				A8C8B9AC2885CBF0001A0B11 /* TaskEditViewReactor.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -665,12 +671,14 @@
 				814402B0287E837600FBD50E /* Version.swift in Sources */,
 				81C0BA5B288004A0009B003F /* BaseTableViewCell.swift in Sources */,
 				8176E50728753821005CE4CC /* SelectorViewController.swift in Sources */,
+				A8C8B9AD2885CBF0001A0B11 /* TaskEditViewReactor.swift in Sources */,
 				A8C8B99A287B814A001A0B11 /* WikipediaPage.swift in Sources */,
 				81C0BA5628800433009B003F /* TaskCell.swift in Sources */,
 				8176E51328755093005CE4CC /* RxDataSetterViewController.swift in Sources */,
 				8176E515287555E6005CE4CC /* RxChildViewController.swift in Sources */,
 				817DC64028757E2400E6BE38 /* Reactive+UIImagePickerController.swift in Sources */,
 				81574E232876C248000A5A41 /* Reactive+CLLocationManager.swift in Sources */,
+				A8C8B9AB2885CBDB001A0B11 /* TaskEditViewController.swift in Sources */,
 				A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */,
 				A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */,
 				A8C8B998287B813F001A0B11 /* WikipediaAPI.swift in Sources */,
