@@ -28,4 +28,10 @@ extension Array where Element: SectionModelType {
         return value
     }
     
+    @discardableResult
+    public mutating func remove(at indexPath: IndexPath) -> Element.Item {
+      return self.update(section: indexPath.section) { items in
+        return items.remove(at: indexPath.item)
+      }
+    }
 }
