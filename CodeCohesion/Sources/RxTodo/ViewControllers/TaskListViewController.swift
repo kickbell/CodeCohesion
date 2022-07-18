@@ -86,6 +86,27 @@ class TaskListViewController: BaseViewController, View {
         reactor.state.map(\.sections)
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        
+        /*
+         RxCocoa에 이미 구현되어 있다.
+         
+         public var itemDeleted: ControlEvent<IndexPath> {
+             let source = self.dataSource.methodInvoked(#selector(UITableViewDataSource.tableView(_:commit:forRowAt:)))
+                 .filter { a in
+                     return UITableViewCell.EditingStyle(rawValue: (try castOrThrow(NSNumber.self, a[1])).intValue) == .delete
+                 }
+                 .map { a in
+                     return try castOrThrow(IndexPath.self, a[2])
+                 }
+             
+             return ControlEvent(events: source)
+         }
+         */
+        tableView.rx.itemDeleted
+            .map(Reactor.Action.deleteTask)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 
     
