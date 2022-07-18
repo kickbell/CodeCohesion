@@ -60,6 +60,9 @@
 		81C0BA5B288004A0009B003F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */; };
 		81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C0BA5C28800523009B003F /* TaskCellReactor.swift */; };
 		81CDD7E6288525F200FBEE2F /* Array+SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CDD7E5288525F200FBEE2F /* Array+SectionModel.swift */; };
+		81CDD7E8288526AD00FBEE2F /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CDD7E7288526AD00FBEE2F /* ServiceProvider.swift */; };
+		81CDD7EA288526DB00FBEE2F /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CDD7E9288526DB00FBEE2F /* TaskService.swift */; };
+		81CDD7EC2885280B00FBEE2F /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CDD7EB2885280B00FBEE2F /* BaseService.swift */; };
 		81CFA4EA2880FD4200CA4767 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4E92880FD4200CA4767 /* Task.swift */; };
 		81CFA4ED2881094F00CA4767 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */; };
 		81E3E0A22876881400B21D8A /* AllTogetherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */; };
@@ -149,6 +152,9 @@
 		81C0BA5A288004A0009B003F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		81C0BA5C28800523009B003F /* TaskCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellReactor.swift; sourceTree = "<group>"; };
 		81CDD7E5288525F200FBEE2F /* Array+SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SectionModel.swift"; sourceTree = "<group>"; };
+		81CDD7E7288526AD00FBEE2F /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		81CDD7E9288526DB00FBEE2F /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		81CDD7EB2885280B00FBEE2F /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		81CFA4E92880FD4200CA4767 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		81E3E0A12876881400B21D8A /* AllTogetherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTogetherViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +397,9 @@
 				81C0BA572880043A009B003F /* Views */,
 				81CFA4EC2881094F00CA4767 /* UITableViewCell+Extension.swift */,
 				81CDD7E5288525F200FBEE2F /* Array+SectionModel.swift */,
+				81CDD7E7288526AD00FBEE2F /* ServiceProvider.swift */,
+				81CDD7E9288526DB00FBEE2F /* TaskService.swift */,
+				81CDD7EB2885280B00FBEE2F /* BaseService.swift */,
 			);
 			path = RxTodo;
 			sourceTree = "<group>";
@@ -645,6 +654,7 @@
 				A8BB396E287728F9007BAEA4 /* Protocols.swift in Sources */,
 				A8BB397028772A77007BAEA4 /* Wireframe.swift in Sources */,
 				810987982877CE0B00023496 /* APIWrappersViewController.swift in Sources */,
+				81CDD7EA288526DB00FBEE2F /* TaskService.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */,
 				814402B2287E84D900FBD50E /* Lenses.swift in Sources */,
@@ -664,6 +674,7 @@
 				A8BB39722877339D007BAEA4 /* ActivityIndicator.swift in Sources */,
 				A8BB397628773836007BAEA4 /* BindingExtensions.swift in Sources */,
 				A8C8B998287B813F001A0B11 /* WikipediaAPI.swift in Sources */,
+				81CDD7E8288526AD00FBEE2F /* ServiceProvider.swift in Sources */,
 				A8C8B9A2287DD170001A0B11 /* GitHubSearchRepositories.swift in Sources */,
 				A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */,
 				A8C8B991287B7FC8001A0B11 /* WikipediaImageCell.swift in Sources */,
@@ -681,6 +692,7 @@
 				A8C8B98D287B7F7A001A0B11 /* WikipediaSearchCell.swift in Sources */,
 				81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
+				81CDD7EC2885280B00FBEE2F /* BaseService.swift in Sources */,
 				811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */,
 				81C0BA54287FFC6A009B003F /* TaskListViewReactor.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,
