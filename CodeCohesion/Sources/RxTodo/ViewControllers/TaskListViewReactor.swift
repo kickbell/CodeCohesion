@@ -49,6 +49,9 @@ final class TaskListViewReactor: Reactor {
             return self.provider.taskService
                 .delete(taskID: task.id)
                 .map { task in
+                    //여기서 쓸거면 의미가 있어.
+                    //일단 이렇게 바꿔보자. 리턴값을 이렇게 받아다가 쓴다고 치자고.
+                    //그러면 의미가있다. 
                     return .deleteSectionItem(indexPath)
                 }
 //                .flatMap { _ in Observable.empty() }
