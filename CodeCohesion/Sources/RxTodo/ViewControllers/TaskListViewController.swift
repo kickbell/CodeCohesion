@@ -52,7 +52,12 @@ class TaskListViewController: BaseViewController, View {
         setup()
     }
     
-    // MARK: - tableView.setEditing(editing, animated: true) 꼭 이써야 함
+    // MARK: - Editing Mode
+    /*
+     생각보다 간단하다. 하지만 아래 2가지는 필수 조건이다.
+     1. 내부적으로 제공되는 editButtonItem 아이템을 바버튼 아이템으로 넣는다.
+     2. tableView.setEditing(editing, animated: true)를 꼭 실행시킨다. (setEditing 메소드를 오버라이드 해도 되고 상태값을 가져와서 해줘도 된다.)
+     */
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: true)
