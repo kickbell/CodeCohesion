@@ -59,6 +59,11 @@ class TaskEditViewController: BaseViewController, View {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        titleInput.becomeFirstResponder()
+    }
+    
     override func setupConstraints() {
         NSLayoutConstraint.activate([
             titleInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.padding),
@@ -68,6 +73,19 @@ class TaskEditViewController: BaseViewController, View {
     }
     
     func bind(reactor: Reactor) {
+        cancelButtonItem.rx.tap
+            .map { Reactor.Action.cancel }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
+        doneButtonItem.rx.tap
+            .map { Reactor.Action.sumbit }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        titleInput.rx.text.orEmpty
+            .map(Reactor.Action.updateTaskTitle)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }
