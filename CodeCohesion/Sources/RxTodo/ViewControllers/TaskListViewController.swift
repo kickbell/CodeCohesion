@@ -63,10 +63,9 @@ class TaskListViewController: BaseViewController, View {
     private func setup() {
         self.reactor = TaskListViewReactor()
         self.title = "RxTodo"
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationItem.rightBarButtonItem = self.addButtonItem
+        self.navigationItem.rightBarButtonItems = [addButtonItem, editButtonItem]
         self.view.backgroundColor = .white
-        self.view.addSubview(self.tableView)
+        self.view.addSubview(tableView)
     }
     
     // MARK: - Binding
