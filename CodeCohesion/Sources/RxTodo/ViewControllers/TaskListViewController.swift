@@ -95,18 +95,18 @@ class TaskListViewController: BaseViewController, View {
         
         /*
          RxCocoa에 이미 구현되어 있다.(itemDeleted, itemMoved...)
-         방식은 똑같다. RxCocoa에 있는 DelegateProxy 를 사용한다. 
+         방식은 똑같다. RxCocoa에 있는 DelegateProxy 를 사용한다.
          
          public var itemDeleted: ControlEvent<IndexPath> {
-             let source = self.dataSource.methodInvoked(#selector(UITableViewDataSource.tableView(_:commit:forRowAt:)))
-                 .filter { a in
-                     return UITableViewCell.EditingStyle(rawValue: (try castOrThrow(NSNumber.self, a[1])).intValue) == .delete
-                 }
-                 .map { a in
-                     return try castOrThrow(IndexPath.self, a[2])
-                 }
-             
-             return ControlEvent(events: source)
+         let source = self.dataSource.methodInvoked(#selector(UITableViewDataSource.tableView(_:commit:forRowAt:)))
+         .filter { a in
+         return UITableViewCell.EditingStyle(rawValue: (try castOrThrow(NSNumber.self, a[1])).intValue) == .delete
+         }
+         .map { a in
+         return try castOrThrow(IndexPath.self, a[2])
+         }
+         
+         return ControlEvent(events: source)
          }
          */
         tableView.rx.itemDeleted
@@ -118,9 +118,19 @@ class TaskListViewController: BaseViewController, View {
             .map(Reactor.Action.moveTask)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(type(of: self.dataSource).Item.self)
+            .map { $0.currentState }
+            .subscribe(onNext: { [weak self] task in
+                guard let `self` = self else { return }
+                let viewController = TaskEditViewController()
+                let navigationController = UINavigationController(rootViewController: viewController) //네비 아이템들을 넣었으므로 꼭 필요
+                self.present(navigationController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
-
     
     
-
+    
+    
 }

@@ -50,6 +50,7 @@ class TaskEditViewController: BaseViewController, View {
         self.navigationItem.rightBarButtonItem = doneButtonItem
         self.view.backgroundColor = .white
         self.view.addSubview(titleInput)
+        self.title = "New"
     }
     
     
@@ -60,7 +61,7 @@ class TaskEditViewController: BaseViewController, View {
     
     override func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Metric.padding),
+            titleInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.padding),
             titleInput.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Metric.padding),
             titleInput.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Metric.padding)
         ])
