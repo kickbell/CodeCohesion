@@ -66,7 +66,7 @@ class TaskListViewController: BaseViewController, View {
     // MARK: - Method
     
     private func setup() {
-        self.reactor = TaskListViewReactor()
+        self.reactor = TaskListViewReactor(provider: ServiceProvider())
         self.title = "RxTodo"
         self.navigationItem.rightBarButtonItems = [addButtonItem, editButtonItem]
         self.view.backgroundColor = .white
@@ -83,10 +83,14 @@ class TaskListViewController: BaseViewController, View {
         self.dataSource.canEditRowAtIndexPath = { _, _  in true }
         self.dataSource.canMoveRowAtIndexPath = { _, _  in true }
         
+        self.rx.viewWillAppear
+            .map { _ in Reactor.Action.refresh }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.map(\.sections)
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
         
         /*
          RxCocoa에 이미 구현되어 있다.

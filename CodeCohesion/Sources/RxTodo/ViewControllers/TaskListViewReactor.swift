@@ -14,10 +14,12 @@ typealias TaskListSection = SectionModel<Void, TaskCellReactor>
 final class TaskListViewReactor: Reactor {
     
     enum Action {
+        case refresh
         case deleteTask(IndexPath)
     }
     
     enum Mutation {
+        case setSections([TaskListSection])
         case deleteSectionItem(IndexPath)
     }
     
@@ -25,25 +27,13 @@ final class TaskListViewReactor: Reactor {
         var sections: [TaskListSection]
     }
     
+    let provider: ServiceProviderType
     let initialState: State
     
-    let emptyResult: [TaskListSection] = [
-        TaskListSection(
-            model: Void(),
-            items: [
-                TaskCellReactor(Task(title: "potato", memo: "memo11")),
-                TaskCellReactor(Task(title: "melon", memo: "memo22")),
-                TaskCellReactor(Task(title: "strawberry", memo: "memo33")),
-                TaskCellReactor(Task(title: "banana", memo: "memo44")),
-                TaskCellReactor(Task(title: "watermelon", memo: "memo55")),
-            ]
-        )
-    ]
-    
-    init() {
+    init(provider: ServiceProviderType) {
+        self.provider = provider
         self.initialState = State(
-            //            sections: [TaskListSection(model: Void(), items: [])]
-            sections: emptyResult
+            sections: [TaskListSection(model: Void(), items: [])]
         )
     }
     
@@ -53,13 +43,47 @@ final class TaskListViewReactor: Reactor {
         case let .deleteTask(indexPath):
             //원래는 이건데 Array+SectionModel에 subscript가 추가되어 있다. 공부할 것.
             //let task = self.currentState.sections[indexPath.section].items[indexPath.item].currentState
+            //TaskListViewReactor에서 셀인 TaskCellReactor의 currentState을 가져오고 있음.
+            //해당 currentState은 특정 값이 아니라 Task 타입이다.
             let task = self.currentState.sections[indexPath].currentState
-            
-            return Observable.empty()
+            return self.provider.taskService
+                .delete(taskID: task.id)
+                .map { task in
+                    return .deleteSectionItem(indexPath)
+                }
+//                .flatMap { _ in Observable.empty() }
+        case .refresh:
+            return self.provider.taskService
+                .fetchTasks()
+                .map { tasks in
+                    let sectionItmes = tasks.map(TaskCellReactor.init)
+                    let section = TaskListSection(model: Void(), items: sectionItmes)
+                    return .setSections([section])
+                }
         }
     }
     
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case let .deleteSectionItem(indexPath):
+            state.sections.remove(at: indexPath)
+            return state
+        case let .setSections(sections):
+            state.sections = sections
+            return state
+        }
+    }
     
+    private func indexPath(forTaskID taskID: String, from state: State) -> IndexPath? {
+        let section = 0
+        let item = state.sections[section].items.firstIndex { reactor in reactor.currentState.id == taskID }
+        if let item = item {
+            return IndexPath(item: item, section: section)
+        } else {
+            return nil
+        }
+    }
 }
 
 
