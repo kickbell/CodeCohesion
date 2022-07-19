@@ -91,9 +91,18 @@ class TaskEditViewController: BaseViewController, View {
         reactor.state.map(\.isDismissed)
             .distinctUntilChanged()
             .filter { $0 }
-            .subscribe(onNext: { [weak self] _ in
-              self?.dismiss(animated: true, completion: nil)
-            })
+            .bind(to: self.rx.dismiss)
             .disposed(by: disposeBag)
     }
 }
+
+extension Reactive where Base: UIViewController {
+    var dismiss: Binder<Bool> {
+        Binder(base) { base, isDismiss in
+            if isDismiss {
+                base.dismiss(animated: true)
+            }
+        }
+    }
+}
+
