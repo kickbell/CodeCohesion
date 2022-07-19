@@ -21,8 +21,32 @@ final class TaskEditViewReactor: Reactor {
     }
     
     struct State {
+        var isDismissed: Bool
         
+        init() {
+            self.isDismissed = false
+        }
     }
     
     let initialState: State = State()
+    
+    func mutate(action: Action) -> Observable<Mutaion> {
+        switch action {
+        case .cancel:
+            return Observable.just(.dismiss)
+        case .sumbit:
+            return Observable.just(.dismiss)
+        case let .updateTaskTitle(title):
+            return Observable.empty()
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutaion) -> State {
+        var state = state
+        switch mutation {
+        case .dismiss:
+            state.isDismissed = true
+            return state
+        }
+    }
 }

@@ -53,7 +53,6 @@ class TaskEditViewController: BaseViewController, View {
         self.title = "New"
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -86,6 +85,15 @@ class TaskEditViewController: BaseViewController, View {
         titleInput.rx.text.orEmpty
             .map(Reactor.Action.updateTaskTitle)
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        //event가 2번 오는데 왜지 ?
+        reactor.state.map(\.isDismissed)
+            .distinctUntilChanged()
+            .filter { $0 }
+            .subscribe(onNext: { [weak self] _ in
+              self?.dismiss(animated: true, completion: nil)
+            })
             .disposed(by: disposeBag)
     }
 }
