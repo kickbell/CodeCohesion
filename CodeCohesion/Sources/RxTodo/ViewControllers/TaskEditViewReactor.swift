@@ -15,9 +15,28 @@ enum TaskEditViewMode {
 }
 
 //입력 후 취소하면 실행할 액션
-enum TaskEditViewCancelAlertAction {
+//여기때문에 AlertActionType 프로토콜을 만들었구나.. 좋다. 굳굳. 
+enum TaskEditViewCancelAlertAction: AlertActionType {
     case leave
     case stay
+    
+    var title: String? {
+        switch self {
+        case .leave:
+            return "Leave"
+        case .stay:
+            return "Stay"
+        }
+    }
+    
+    var style: UIAlertAction.Style {
+        switch self {
+        case .leave:
+            return .destructive
+        case .stay:
+            return .default
+        }
+    }
 }
 
 final class TaskEditViewReactor: Reactor {
@@ -48,7 +67,7 @@ final class TaskEditViewReactor: Reactor {
             return Observable.just(.dismiss)
         case .sumbit:
             return Observable.just(.dismiss)
-        case let .updateTaskTitle(title):
+        case .updateTaskTitle(_):
             return Observable.empty()
         }
     }

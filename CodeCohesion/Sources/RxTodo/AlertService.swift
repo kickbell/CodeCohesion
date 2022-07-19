@@ -11,6 +11,10 @@ import UIKit
 import RxSwift
 import URLNavigator
 
+/*
+ TaskEditViewCancelAlertAction 에 적용하기 위해서.
+ 물론 여기말고도 다른데도 적용할 수 있을 것이다. 왜 만들었는지 알겠음.
+ */
 protocol AlertActionType {
     var title: String? { get }
     var style: UIAlertAction.Style { get }
