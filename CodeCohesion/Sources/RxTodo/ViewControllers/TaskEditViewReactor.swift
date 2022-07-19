@@ -15,7 +15,7 @@ enum TaskEditViewMode {
 }
 
 //입력 후 취소하면 실행할 액션
-//여기때문에 AlertActionType 프로토콜을 만들었구나.. 좋다. 굳굳. 
+//여기때문에 AlertActionType 프로토콜을 만들었구나.. 좋다. 굳굳.
 enum TaskEditViewCancelAlertAction: AlertActionType {
     case leave
     case stay
@@ -52,14 +52,36 @@ final class TaskEditViewReactor: Reactor {
     }
     
     struct State {
+        var title: String
+        var taskTitle: String
+        var canSubmit: Bool
+        var shouldConfirmCancel: Bool
         var isDismissed: Bool
         
-        init() {
+        init(title: String, taskTitle: String, canSubmit: Bool) {
+            self.title = title
+            self.taskTitle = taskTitle
+            self.canSubmit = canSubmit
+            self.shouldConfirmCancel = false
             self.isDismissed = false
         }
     }
     
-    let initialState: State = State()
+    let provider: ServiceProviderType
+    let mode: TaskEditViewMode
+    let initialState: State
+    
+    init(provider: ServiceProviderType, mode: TaskEditViewMode) {
+        self.provider = provider
+        self.mode = mode
+        
+        switch mode {
+        case .new:
+            self.initialState = State(title: "New", taskTitle: "", canSubmit: false)
+        case .edit(let task):
+            self.initialState = State(title: "Edit", taskTitle: task.title, canSubmit: true)
+        }
+    }
     
     func mutate(action: Action) -> Observable<Mutaion> {
         switch action {
