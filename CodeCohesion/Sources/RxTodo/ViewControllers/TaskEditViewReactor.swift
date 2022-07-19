@@ -8,6 +8,18 @@
 import RxSwift
 import ReactorKit
 
+//같은 화면이지만 다르게 대응해야 하니까
+enum TaskEditViewMode {
+    case new
+    case edit(Task)
+}
+
+//입력 후 취소하면 실행할 액션
+enum TaskEditViewCancelAlertAction {
+    case leave
+    case stay
+}
+
 final class TaskEditViewReactor: Reactor {
     
     enum Action {
