@@ -44,8 +44,18 @@ class TaskEditViewController: BaseViewController, View {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    // MARK: - Initalizing
+    
+    init(reactor: TaskEditViewReactor) {
+        super.init()
+        self.reactor = reactor
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setup() {
-        self.reactor = TaskEditViewReactor()
         self.navigationItem.leftBarButtonItem = cancelButtonItem
         self.navigationItem.rightBarButtonItem = doneButtonItem
         self.view.backgroundColor = .white

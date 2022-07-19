@@ -120,20 +120,20 @@ class TaskListViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         addButtonItem.rx.tap
-            .map { reactor.currentState }
-            .subscribe(onNext: { [weak self] task in
+            .map(reactor.reactorForCreatingTask)
+            .subscribe(onNext: { [weak self] taskEditViewReactor in
                 guard let `self` = self else { return }
-                let viewController = TaskEditViewController()
+                let viewController = TaskEditViewController(reactor: taskEditViewReactor)
                 let navigationController = UINavigationController(rootViewController: viewController) //네비 아이템들을 넣었으므로 꼭 필요
                 self.present(navigationController, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(type(of: self.dataSource).Item.self)
-            .map { $0.currentState }
-            .subscribe(onNext: { [weak self] task in
+            .map(reactor.reactorForEditingTask)
+            .subscribe(onNext: { [weak self] taskEditViewReactor in
                 guard let `self` = self else { return }
-                let viewController = TaskEditViewController()
+                let viewController = TaskEditViewController(reactor: taskEditViewReactor)
                 let navigationController = UINavigationController(rootViewController: viewController) //네비 아이템들을 넣었으므로 꼭 필요
                 self.present(navigationController, animated: true, completion: nil)
             })
