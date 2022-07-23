@@ -18,5 +18,6 @@ target 'CodeCohesion' do
   pod 'ReactorKit'
   pod 'RxDataSources'
   pod 'NSObject+Rx'
-
+  pod 'URLNavigator'
+  
 end

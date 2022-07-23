@@ -44,15 +44,24 @@ class TaskEditViewController: BaseViewController, View {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    // MARK: - Initalizing
+    
+    init(reactor: TaskEditViewReactor) {
+        super.init()
+        self.reactor = reactor
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setup() {
-        self.reactor = TaskEditViewReactor()
         self.navigationItem.leftBarButtonItem = cancelButtonItem
         self.navigationItem.rightBarButtonItem = doneButtonItem
         self.view.backgroundColor = .white
         self.view.addSubview(titleInput)
         self.title = "New"
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,5 +96,23 @@ class TaskEditViewController: BaseViewController, View {
             .map(Reactor.Action.updateTaskTitle)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        //event가 2번 오는데 왜지 ?
+        reactor.state.map(\.isDismissed)
+            .distinctUntilChanged()
+            .filter { $0 }
+            .bind(to: self.rx.dismiss)
+            .disposed(by: disposeBag)
     }
 }
+
+extension Reactive where Base: UIViewController {
+    var dismiss: Binder<Bool> {
+        Binder(base) { base, isDismiss in
+            if isDismiss {
+                base.dismiss(animated: true)
+            }
+        }
+    }
+}
+

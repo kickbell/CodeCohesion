@@ -13,6 +13,8 @@ typealias TaskListSection = SectionModel<Void, TaskCellReactor>
 
 final class TaskListViewReactor: Reactor {
     
+    // MARK: - Reactor
+    
     enum Action {
         case refresh
         case deleteTask(IndexPath)
@@ -75,6 +77,8 @@ final class TaskListViewReactor: Reactor {
         }
     }
     
+    // MARK: - Methods
+    
     private func indexPath(forTaskID taskID: String, from state: State) -> IndexPath? {
         let section = 0
         let item = state.sections[section].items.firstIndex { reactor in reactor.currentState.id == taskID }
@@ -83,6 +87,19 @@ final class TaskListViewReactor: Reactor {
         } else {
             return nil
         }
+    }
+    
+    // TaskListViewController에 provider가 있을 이유가 없으니 이 메소드는 여기 있는게 맞다.
+    // 그리고 여기서 이렇게 만들어서 TaskEditViewController에 리액터를 주입시켜주는거다.
+    func reactorForCreatingTask() -> TaskEditViewReactor {
+        return TaskEditViewReactor(provider: self.provider, mode: .new)
+    }
+    
+    //여기서 지금 셀이 TaskCellReactor잖아. 그리고 셀의 currentState가 Task이다.
+    //그래서 이렇게 작업해서 의존성을 주입해주는 것. 
+    func reactorForEditingTask(_ taskCellReactor: TaskCellReactor) -> TaskEditViewReactor {
+        let task = taskCellReactor.currentState //Task
+        return TaskEditViewReactor(provider: self.provider, mode: .edit(task))
     }
 }
 

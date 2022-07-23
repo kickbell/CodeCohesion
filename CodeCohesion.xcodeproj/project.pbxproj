@@ -69,6 +69,7 @@
 		81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3E0A42876882D00B21D8A /* AllTogether.storyboard */; };
 		81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A628768A4000B21D8A /* CalcData.swift */; };
 		81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A828768A8600B21D8A /* CalcViewModel.swift */; };
+		81F3456828868FD200C516BC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3456728868FD200C516BC /* AlertService.swift */; };
 		A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */; };
 		A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */; };
 		A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */; };
@@ -163,6 +164,7 @@
 		81E3E0A42876882D00B21D8A /* AllTogether.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllTogether.storyboard; sourceTree = "<group>"; };
 		81E3E0A628768A4000B21D8A /* CalcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcData.swift; sourceTree = "<group>"; };
 		81E3E0A828768A8600B21D8A /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
+		81F3456728868FD200C516BC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSignUp.storyboard; sourceTree = "<group>"; };
 		A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewController.swift; sourceTree = "<group>"; };
 		A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewModel.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				81CDD7E7288526AD00FBEE2F /* ServiceProvider.swift */,
 				81CDD7E9288526DB00FBEE2F /* TaskService.swift */,
 				81CDD7EB2885280B00FBEE2F /* BaseService.swift */,
+				81F3456728868FD200C516BC /* AlertService.swift */,
 			);
 			path = RxTodo;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				81C0BA52287FFC2D009B003F /* TaskListViewController.swift in Sources */,
 				81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */,
 				A8C8B9A8287DD1AA001A0B11 /* GitHubSearchRepositoriesViewController.swift in Sources */,
+				81F3456828868FD200C516BC /* AlertService.swift in Sources */,
 				81C0BA50287FFC05009B003F /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

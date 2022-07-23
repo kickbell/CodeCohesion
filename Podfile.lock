@@ -29,6 +29,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
+  - URLNavigator (2.4.1)
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyJSON
   - Then
+  - URLNavigator
 
 SPEC REPOS:
   trunk:
@@ -61,6 +63,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
     - Then
+    - URLNavigator
     - WeakMapTable
 
 SPEC CHECKSUMS:
@@ -78,8 +81,9 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: a3073a3fe4b27b8b4200cca62ddd9dd27d0a4974
+PODFILE CHECKSUM: 45ea0c33f7d6d425c56011ec655538fc7b70be24
 
 COCOAPODS: 1.11.3
