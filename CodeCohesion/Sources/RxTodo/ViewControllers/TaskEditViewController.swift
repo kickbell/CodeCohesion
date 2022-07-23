@@ -93,6 +93,8 @@ class TaskEditViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         titleInput.rx.text.orEmpty
+            .skip(1)
+//            .debug("titleInput")
             .map(Reactor.Action.updateTaskTitle)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -103,7 +105,17 @@ class TaskEditViewController: BaseViewController, View {
             .filter { $0 }
             .bind(to: self.rx.dismiss)
             .disposed(by: disposeBag)
+    
+        reactor.state.map(\.canSubmit)
+//            .debug("canSubmit") // 뭔가 괜찮은아이디어가..
+            .distinctUntilChanged()
+            .bind(to: doneButtonItem.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        
     }
+    
+    
 }
 
 extension Reactive where Base: UIViewController {
@@ -115,4 +127,6 @@ extension Reactive where Base: UIViewController {
         }
     }
 }
+
+
 
