@@ -85,8 +85,24 @@ final class TaskEditViewReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutaion> {
         switch action {
-        case .cancel:
-            return Observable.just(.dismiss)
+        case .cancel: //캔슬에서 또 2가지 액션을 나눠서 줄 수 있는 것이야.
+            let alertActions: [TaskEditViewCancelAlertAction] = [.leave, .stay]
+            return self.provider.alertService
+                .show(
+                    title: "Really?",
+                    message: "All changes will be lost",
+                    preferredStyle: .alert,
+                    actions: alertActions)
+                .flatMap { action -> Observable<Mutaion> in
+                    switch action {
+                    case .stay:
+                        //이게 좀 의아한데,, UIAlertAction.Style에 cancel, destructive, default 가 있잖아.
+                        //근데 여기서 default, cancel 만 해도 알아서 얼랏이 닫히는 것 같애. 그래서 empty() 라서
+                        //뭐라까.. reduce에서 처리해주는 게 없더라도 닫히나봐 아마도..? [
+                        return Observable.empty()
+                    case .leave: return Observable.just(.dismiss)
+                    }
+                }
         case .sumbit:
             return Observable.just(.dismiss)
         case .updateTaskTitle(_):
