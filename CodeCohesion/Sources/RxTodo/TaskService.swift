@@ -8,6 +8,7 @@
 import RxSwift
 
 enum TaskEvent {
+    case create(Task)
     case delete(id: String)
     case move(id: String, to: Int)
 }
@@ -19,6 +20,7 @@ protocol TaskServiceType {
     // MARK: - 사실상 얘는 userdefault에 저장하는 것 빼고는 용도가 없어
     func saveTasks(_ tasks: [Task]) -> Observable<Void>
     
+    func create(title: String, memo: String?) -> Observable<Task>
     func delete(taskID: String) -> Observable<Task>
     func move(taskId: String, to: Int) -> Observable<Task>
 }
@@ -43,11 +45,21 @@ final class TaskService: BaseService, TaskServiceType {
       return .just(Void())
     }
     
+    func create(title: String, memo: String?) -> Observable<Task> {
+        return self.fetchTasks()
+          .flatMap { [weak self] tasks -> Observable<Task> in
+            guard let `self` = self else { return .empty() }
+            let newTask = Task(title: title, memo: memo)
+            return self.saveTasks(tasks + [newTask]).map { newTask }
+          }
+          .do(onNext: { task in
+            self.event.onNext(.create(task))
+          })
+    }
+    
     func delete(taskID: String) -> Observable<Task> {
         return self.fetchTasks()
             .flatMap { [weak self] tasks -> Observable<Task> in
-                
-                
                 guard let `self` = self else { return .empty() }
 //                guard let index = tasks.firstIndex(where: { $0.id == taskID }) else { return .empty() }
                 var tasks = tasks

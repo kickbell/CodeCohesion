@@ -23,6 +23,7 @@ final class TaskListViewReactor: Reactor {
     
     enum Mutation {
         case setSections([TaskListSection])
+        case insertSectionItem(IndexPath, TaskListSection.Item)
         case deleteSectionItem(IndexPath)
         case moveSectionItem(IndexPath, IndexPath)
     }
@@ -73,6 +74,9 @@ final class TaskListViewReactor: Reactor {
         case let .moveSectionItem(sourceIndexPath, destinationIndexPath):
             let sectionItem = state.sections.remove(at: sourceIndexPath)
             state.sections.insert(sectionItem, at: destinationIndexPath)
+            return state
+        case let .insertSectionItem(indexPath, sectionItem):
+            state.sections.insert(sectionItem, at: indexPath)
             return state
         }
     }

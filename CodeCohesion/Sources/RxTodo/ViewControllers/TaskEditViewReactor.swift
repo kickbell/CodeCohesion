@@ -49,6 +49,7 @@ final class TaskEditViewReactor: Reactor {
     
     enum Mutaion {
         case dismiss
+        case updateTaskTitle(String)
     }
     
     struct State {
@@ -104,9 +105,16 @@ final class TaskEditViewReactor: Reactor {
                     }
                 }
         case .sumbit:
-            return Observable.just(.dismiss)
-        case .updateTaskTitle(_):
-            return Observable.empty()
+            guard self.currentState.canSubmit else { return .empty() }
+            return self.provider.taskService
+                .create(title: self.currentState.taskTitle, memo: nil)
+                .map { _ in .dismiss }
+                .do(onNext: { ss in
+                    self.provider.taskService
+                })
+            
+        case let .updateTaskTitle(taskTitle):
+            return Observable.just(.updateTaskTitle(taskTitle))
         }
     }
     
@@ -115,6 +123,10 @@ final class TaskEditViewReactor: Reactor {
         switch mutation {
         case .dismiss:
             state.isDismissed = true
+            return state
+        case let .updateTaskTitle(taskTitle):
+            state.taskTitle = taskTitle
+            state.canSubmit = !taskTitle.isEmpty
             return state
         }
     }
