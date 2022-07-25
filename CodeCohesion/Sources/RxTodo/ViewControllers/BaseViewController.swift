@@ -21,7 +21,7 @@ class BaseViewController: UIViewController {
      bv는 uivc를 상속하고 있고, 클래스이므로 꼭 이니셜라이저 위임 super.init(nibname:, bundle:) 을 해야한다.
      그래야 super class의 속성이나 그런것들을 다 갖고올 수 있으니까.
      
-     그리고 커스텀 지정이니셜라이저를 구현하면 스토리보드로 작업하는게 되버리나?.. 왜 리콰이어 이닛이 필요해질까.
+     그리고 커스텀 지정이니셜라이저를 구현하면 스토리보드로 작업하는게 되버리나?.. 왜 리콰이어 이닛이 필요해질까. ?
      */
     
     init() {
