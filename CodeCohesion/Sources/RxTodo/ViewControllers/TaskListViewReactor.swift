@@ -99,8 +99,8 @@ final class TaskListViewReactor: Reactor {
         return TaskEditViewReactor(provider: self.provider, mode: .new)
     }
     
-    //여기서 지금 셀이 TaskCellReactor잖아. 그리고 셀의 currentState가 Task이다.
-    //그래서 이렇게 작업해서 의존성을 주입해주는 것. 
+    // 여기서 지금 셀이 TaskCellReactor잖아. 그리고 셀의 currentState가 Task이다.
+    // 그래서 이렇게 작업해서 의존성을 주입해주는 것.
     func reactorForEditingTask(_ taskCellReactor: TaskCellReactor) -> TaskEditViewReactor {
         let task = taskCellReactor.currentState //Task
         return TaskEditViewReactor(provider: self.provider, mode: .edit(task))
