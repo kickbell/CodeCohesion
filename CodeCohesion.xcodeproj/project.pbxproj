@@ -73,6 +73,7 @@
 		A8657C472896ED80007306A1 /* CustomViewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */; };
 		A8657C4A2896EDD1007306A1 /* CustomViewEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */; };
 		A8657C4C2896EDF6007306A1 /* MessageInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */; };
+		A8657C4E28972852007306A1 /* CustomViewEventReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657C4D28972852007306A1 /* CustomViewEventReactor.swift */; };
 		A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */; };
 		A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */; };
 		A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */; };
@@ -171,6 +172,7 @@
 		A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewEventViewController.swift; sourceTree = "<group>"; };
 		A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomViewEvent.storyboard; sourceTree = "<group>"; };
 		A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputBar.swift; sourceTree = "<group>"; };
+		A8657C4D28972852007306A1 /* CustomViewEventReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewEventReactor.swift; sourceTree = "<group>"; };
 		A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSignUp.storyboard; sourceTree = "<group>"; };
 		A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewController.swift; sourceTree = "<group>"; };
 		A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewModel.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 			children = (
 				A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */,
 				A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */,
+				A8657C4D28972852007306A1 /* CustomViewEventReactor.swift */,
 				A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */,
 			);
 			path = CustomViewEventWithReactorKit;
@@ -684,6 +687,7 @@
 				81CDD7EA288526DB00FBEE2F /* TaskService.swift in Sources */,
 				81574E212876BF09000A5A41 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				810987A728780AFA00023496 /* CustomPickerViewAdapterExampleViewController.swift in Sources */,
+				A8657C4E28972852007306A1 /* CustomViewEventReactor.swift in Sources */,
 				814402B2287E84D900FBD50E /* Lenses.swift in Sources */,
 				8109879D2877D0A900023496 /* Operators.swift in Sources */,
 				81574E192876ABC1000A5A41 /* GeolocationViewController.swift in Sources */,
