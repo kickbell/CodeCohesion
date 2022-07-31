@@ -70,6 +70,9 @@
 		81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A628768A4000B21D8A /* CalcData.swift */; };
 		81E3E0A928768A8600B21D8A /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E0A828768A8600B21D8A /* CalcViewModel.swift */; };
 		81F3456828868FD200C516BC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3456728868FD200C516BC /* AlertService.swift */; };
+		A8657C472896ED80007306A1 /* CustomViewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */; };
+		A8657C4A2896EDD1007306A1 /* CustomViewEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */; };
+		A8657C4C2896EDF6007306A1 /* MessageInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */; };
 		A8BB39682877241A007BAEA4 /* GitHubSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */; };
 		A8BB396A28772674007BAEA4 /* GitHubSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */; };
 		A8BB396C287726A3007BAEA4 /* GitHubSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */; };
@@ -165,6 +168,9 @@
 		81E3E0A628768A4000B21D8A /* CalcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcData.swift; sourceTree = "<group>"; };
 		81E3E0A828768A8600B21D8A /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
 		81F3456728868FD200C516BC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewEventViewController.swift; sourceTree = "<group>"; };
+		A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomViewEvent.storyboard; sourceTree = "<group>"; };
+		A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputBar.swift; sourceTree = "<group>"; };
 		A8BB39672877241A007BAEA4 /* GitHubSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubSignUp.storyboard; sourceTree = "<group>"; };
 		A8BB396928772674007BAEA4 /* GitHubSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewController.swift; sourceTree = "<group>"; };
 		A8BB396B287726A3007BAEA4 /* GitHubSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignUpViewModel.swift; sourceTree = "<group>"; };
@@ -350,6 +356,7 @@
 				A8C8B9A0287DD156001A0B11 /* GitHubSearchRepositories */,
 				814402BA287EB4F600FBD50E /* GitHubSearchWithReactorKit */,
 				81C0BA4C287FF8E4009B003F /* RxTodo */,
+				A8657C482896ED88007306A1 /* CustomViewEventWithReactorKit */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -443,6 +450,16 @@
 				81E3E0A828768A8600B21D8A /* CalcViewModel.swift */,
 			);
 			path = AllTogether;
+			sourceTree = "<group>";
+		};
+		A8657C482896ED88007306A1 /* CustomViewEventWithReactorKit */ = {
+			isa = PBXGroup;
+			children = (
+				A8657C492896EDD1007306A1 /* CustomViewEvent.storyboard */,
+				A8657C462896ED80007306A1 /* CustomViewEventViewController.swift */,
+				A8657C4B2896EDF6007306A1 /* MessageInputBar.swift */,
+			);
+			path = CustomViewEventWithReactorKit;
 			sourceTree = "<group>";
 		};
 		A8BB3966287723D9007BAEA4 /* GitHubSignUp */ = {
@@ -594,6 +611,7 @@
 				81C0BA4B287FF8E1009B003F /* RxTodo.storyboard in Resources */,
 				A8C8B98A287B7BB8001A0B11 /* WikipediaSearch .storyboard in Resources */,
 				81E3E0A52876882D00B21D8A /* AllTogether.storyboard in Resources */,
+				A8657C4A2896EDD1007306A1 /* CustomViewEvent.storyboard in Resources */,
 				8109879B2877CE2200023496 /* APIWrappers.storyboard in Resources */,
 				81328FA928752BFA00E46974 /* Main.storyboard in Resources */,
 				A8C8B99F287DD101001A0B11 /* GitHubSearchRepositories.storyboard in Resources */,
@@ -694,6 +712,7 @@
 				810987AB287817AF00023496 /* PickerViewViewAdapter.swift in Sources */,
 				814402BC287EB51500FBD50E /* GitHubSearchViewReactor.swift in Sources */,
 				811F29C4287D088C001DEEE3 /* ImageService.swift in Sources */,
+				A8657C4C2896EDF6007306A1 /* MessageInputBar.swift in Sources */,
 				81E3E0A728768A4000B21D8A /* CalcData.swift in Sources */,
 				8176E51728756E71005CE4CC /* RxSelectorViewController.swift in Sources */,
 				814402B9287EB4F300FBD50E /* GitHubSearchViewController.swift in Sources */,
@@ -704,6 +723,7 @@
 				81C0BA5D28800523009B003F /* TaskCellReactor.swift in Sources */,
 				8176E50A287539EF005CE4CC /* PickerViewController.swift in Sources */,
 				81CDD7EC2885280B00FBEE2F /* BaseService.swift in Sources */,
+				A8657C472896ED80007306A1 /* CustomViewEventViewController.swift in Sources */,
 				811F29C6287D097D001DEEE3 /* Reachability.swift in Sources */,
 				81C0BA54287FFC6A009B003F /* TaskListViewReactor.swift in Sources */,
 				8176E501287535B2005CE4CC /* DataSetterViewController.swift in Sources */,

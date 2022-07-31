@@ -326,8 +326,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wFb-K3-iJR">
-                                                    <rect key="frame" x="20" y="8" width="31.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="같은화면 내의 다른 커스텀뷰 이벤트 With ReactorKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wFb-K3-iJR">
+                                                    <rect key="frame" x="20" y="8" width="342" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -342,6 +342,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="KNH-3D-KSH" kind="show" id="acf-bm-EPX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XEG-At-jGr" detailTextLabel="Xgi-dn-Zdm" style="IBUITableViewCellStyleSubtitle" id="wBd-kn-kHn">
                                         <rect key="frame" x="0.0" y="720.5" width="414" height="52.5"/>
@@ -350,8 +353,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XEG-At-jGr">
-                                                    <rect key="frame" x="20" y="8" width="31.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="설정화면 With ReactorKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XEG-At-jGr">
+                                                    <rect key="frame" x="20" y="8" width="173" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -508,6 +511,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikd-QF-8jE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1875" y="-64"/>
+        </scene>
+        <!--CustomViewEvent-->
+        <scene sceneID="9r1-Fo-nrs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CustomViewEvent" id="KNH-3D-KSH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zzS-18-Tth"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zU4-j1-Zj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-33"/>
         </scene>
     </scenes>
     <resources>
