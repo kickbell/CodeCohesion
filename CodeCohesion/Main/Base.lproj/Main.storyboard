@@ -369,6 +369,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Dfp-pG-0n0" kind="show" id="JtW-RK-f6b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -521,6 +524,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zU4-j1-Zj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1922" y="-33"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="dAv-0e-07x">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="Dfp-pG-0n0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2Nu-eA-4jk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxZ-wR-qXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="-4"/>
         </scene>
     </scenes>
     <resources>

@@ -50,17 +50,13 @@ class TaskCell: BaseTableViewCell, View {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    // MARK: - Initializing
-    
-    override func initialize() {
-        self.contentView.addSubview(self.titleLabel)
-    }
     
     // MARK: - Layout
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        self.contentView.addSubview(self.titleLabel)
+      
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: Metric.cellPadding),
             titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: Metric.cellPadding),
