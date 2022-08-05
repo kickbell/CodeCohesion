@@ -21,7 +21,7 @@ class CustomViewEventViewController: UIViewController, View {
         $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    var disposeBag: DisposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
